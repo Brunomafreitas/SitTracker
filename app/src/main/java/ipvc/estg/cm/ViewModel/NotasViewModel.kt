@@ -1,9 +1,7 @@
 package ipvc.estg.cm.ViewModel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import ipvc.estg.cm.DAO.notasDAO
 
 import ipvc.estg.cm.ENTIDADES.notasPessoais
@@ -13,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class NotasViewModel (application: Application) : AndroidViewModel(application) {
     private val repository: notasRepository
-    val allNotes: LiveData<List<notasPessoais>>;
+    var allNotes: LiveData<List<notasPessoais>>;
 
      init {
         val notasDAOVAR = NotasDB.getDatabase(application, viewModelScope).wordDao()
@@ -28,3 +26,4 @@ class NotasViewModel (application: Application) : AndroidViewModel(application) 
         repository.insert(notas)
     }
 }
+
