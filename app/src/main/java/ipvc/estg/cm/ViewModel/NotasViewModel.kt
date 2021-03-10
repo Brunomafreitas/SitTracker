@@ -12,10 +12,10 @@ import ipvc.estg.cm.db.notasRepository
 import kotlinx.coroutines.launch
 
 class NotasViewModel (application: Application) : AndroidViewModel(application) {
-    private var repository: notasRepository
+    private val repository: notasRepository
     val allNotes: LiveData<List<notasPessoais>>;
 
-    init {
+     init {
         val notasDAOVAR = NotasDB.getDatabase(application, viewModelScope).wordDao()
         repository = notasRepository(notasDAOVAR);
         allNotes = repository.allNotes;

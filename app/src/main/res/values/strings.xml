@@ -3,4 +3,13 @@
     <string name="imageFundo">TODO</string>
     <string name="loginButtonn">Login</string>
     <string name="notaspessoais">NotasPessoais</string>
+    <string name="Titulo">Titulo</string>
+    <string name="adicionarNota"></string>
+    <string name="hint_word">Word...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="add_word">Add word</string>
+    <string name="nota">Nota</string>
+    <string name="button">Button</string>
+
 </resources>
