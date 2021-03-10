@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "ipvc.estg.cm"
-        minSdkVersion 16
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -26,6 +26,9 @@ android {
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
+
+
+
 
 }
 

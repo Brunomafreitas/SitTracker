@@ -2,10 +2,9 @@ package ipvc.estg.cm.db
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-
 import ipvc.estg.cm.DAO.notasDAO
+
 import ipvc.estg.cm.ENTIDADES.notasPessoais
-import kotlinx.coroutines.flow.Flow
 
 class notasRepository(private val notasNoDao: notasDAO) {
 
