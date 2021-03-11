@@ -56,7 +56,7 @@ public abstract class NotasDB : RoomDatabase() {
                     "notas_database"
 
                 )
-                    //.fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration()
                     .addCallback(notasDataBaseCallback(scope))
                     .build()
                 INSTANCE=instance

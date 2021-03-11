@@ -1,29 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNota">
+    tools:context=".AddNota"
+    android:orientation="vertical">
+
     <EditText
         android:id="@+id/edit_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="100dp"
+        android:layout_marginTop="36dp"
+        android:autofillHints=""
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/tituloNota"
+        android:inputType="textAutoComplete"
         android:minHeight="48dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_word2"
+        android:layout_width="233dp"
+        android:layout_height="137dp"
+        android:layout_margin="100dp"
+        android:layout_marginTop="56dp"
+        android:autofillHints=""
         android:fontFamily="sans-serif-light"
         android:hint="@string/nota"
         android:inputType="textAutoComplete"
-        android:layout_margin="100dp"
+        android:minHeight="48dp"
         android:textSize="18sp"
-        android:autofillHints="" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_word" />
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-100dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="303dp"
+        android:layout_height="55dp"
         android:layout_weight="1"
-        android:text="@string/button" />
+        android:text="@string/buttonSubmeterNotaPessoal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

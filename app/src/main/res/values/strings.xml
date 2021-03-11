@@ -10,6 +10,7 @@
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="add_word">Add word</string>
     <string name="nota">Nota</string>
-    <string name="button">Button</string>
-
+    <string name="buttonSubmeterNotaPessoal">Submeter</string>
+    <string name="tituloNota">Titulo da nota</string>
+    <string name="nada"></string>
 </resources>

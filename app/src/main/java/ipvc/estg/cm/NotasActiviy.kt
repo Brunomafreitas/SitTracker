@@ -48,7 +48,7 @@ private lateinit var notasViewModel: NotasViewModel;
 
         if(requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK){
             data?.getStringExtra(AddNota.EXTRA_REPLY)?.let {
-                val nota = notasPessoais(tituloNota = it, corpoNota = "Algo para fazer mais tarde")
+                val nota = notasPessoais(id = 1, tituloNota = it, corpoNota = "Algo para fazer mais tarde")
                 notasViewModel.insert(nota)
             }
         }else{
