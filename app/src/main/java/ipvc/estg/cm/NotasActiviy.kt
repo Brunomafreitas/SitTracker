@@ -36,11 +36,11 @@ private lateinit var notasViewModel: NotasViewModel;
 
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener({
+        fab.setOnClickListener {
             val intent = Intent (this, AddNota::class.java)
             startActivityForResult(intent, newWordActivityRequestCode);
 
-        })
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

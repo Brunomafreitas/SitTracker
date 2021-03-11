@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.reflect.KClass
 
-@Database(entities = arrayOf<KClass<*>>(notasPessoais::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf<KClass<*>>(notasPessoais::class), version = 3, exportSchema = false)
 public abstract class NotasDB : RoomDatabase() {
 
     abstract fun wordDao(): notasDAO
@@ -25,13 +25,13 @@ public abstract class NotasDB : RoomDatabase() {
                 scope.launch {
                     var noteDAO = database.wordDao()
 
-                    noteDAO.deleteAll()
+                   /* noteDAO.deleteAll()
 
                     var nota = notasPessoais(1, "Boas", "BoasCorpo")
                     noteDAO.insert(nota);
 
                     var nota1 = notasPessoais(2, "Boas1", "BoasCorpo1")
-                    noteDAO.insert(nota1);
+                    noteDAO.insert(nota1);*/
                 }
             }
         }
@@ -56,7 +56,7 @@ public abstract class NotasDB : RoomDatabase() {
                     "notas_database"
 
                 )
-                    .fallbackToDestructiveMigration()
+                    //.fallbackToDestructiveMigration()
                     .addCallback(notasDataBaseCallback(scope))
                     .build()
                 INSTANCE=instance
