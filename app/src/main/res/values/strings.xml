@@ -13,4 +13,6 @@
     <string name="buttonSubmeterNotaPessoal">Submeter</string>
     <string name="tituloNota">Titulo da nota</string>
     <string name="nada"></string>
+    <string name="Editar">Editar</string>
+    <string name="Eliminar">Eliminar</string>
 </resources>

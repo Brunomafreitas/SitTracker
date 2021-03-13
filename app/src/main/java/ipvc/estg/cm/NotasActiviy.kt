@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -14,16 +16,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ipvc.estg.cm.ENTIDADES.notasPessoais
 import ipvc.estg.cm.ViewModel.NotasViewModel
 import ipvc.estg.cm.adapter.NotaAdapter
+import kotlinx.android.synthetic.main.activity_notas_activiy.*
+import kotlinx.android.synthetic.main.recyclerviewitem.*
 
-class NotasActiviy : AppCompatActivity() {
+class NotasActiviy : AppCompatActivity(), NotaAdapter.OnItemClickListener {
 private lateinit var notasViewModel: NotasViewModel;
     private val newWordActivityRequestCode = 1;
+     lateinit var recyclerView : RecyclerView;
+     lateinit var adapter : NotaAdapter;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas_activiy)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = NotaAdapter(this);
+        recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        adapter = NotaAdapter(this,this);
         recyclerView.adapter = adapter;
         recyclerView.layoutManager = LinearLayoutManager(this);
 
@@ -32,6 +39,7 @@ private lateinit var notasViewModel: NotasViewModel;
         notasViewModel.allNotes.observe(this, Observer{ notas ->
         notas?.let {adapter.setNota(it)}
         })
+
 
 
 
@@ -48,11 +56,23 @@ private lateinit var notasViewModel: NotasViewModel;
 
         if(requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK){
             data?.getStringExtra(AddNota.EXTRA_REPLY)?.let {
-                val nota = notasPessoais(id = 1, tituloNota = it, corpoNota = "Algo para fazer mais tarde")
+                val nota = notasPessoais(tituloNota = it, corpoNota = "algo")
                 notasViewModel.insert(nota)
             }
         }else{
             Toast.makeText(applicationContext, "Nota não inserida", Toast.LENGTH_SHORT).show()
         }
     }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this, "Item $position clicked" , Toast.LENGTH_SHORT).show();
+
+        val intent = Intent(this, atividadeNotaClicada::class.java);
+
+        intent.putExtra("tituloNota", adapter.getIndiceNota(position).tituloNota);
+        intent.putExtra("corpoNota", adapter.getIndiceNota(position).corpoNota);
+        startActivity(intent);
+    }
+
+
 }

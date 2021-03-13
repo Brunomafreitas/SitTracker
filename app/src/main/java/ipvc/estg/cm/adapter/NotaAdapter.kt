@@ -1,6 +1,7 @@
 package ipvc.estg.cm.adapter
 
 import android.content.Context
+import android.net.sip.SipSession
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,17 +11,33 @@ import ipvc.estg.cm.ENTIDADES.notasPessoais
 import ipvc.estg.cm.R
 import kotlinx.android.synthetic.main.recyclerviewitem.view.*
 
-class NotaAdapter internal constructor(
-    context: Context
-): RecyclerView.Adapter<NotaAdapter.NotasViewHolder>() {
+class NotaAdapter internal constructor (
+    context: Context,
+private val listener : OnItemClickListener): RecyclerView.Adapter<NotaAdapter.NotasViewHolder>(){
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notas = emptyList<notasPessoais>()
 
 
-    class NotasViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    inner class NotasViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) , View.OnClickListener{
         val notaItemView: TextView = itemView.findViewById(R.id.tituloNota)
         val descNotaItemView: TextView = itemView.findViewById(R.id.corpoNota)
+
+        init {
+                itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position : Int = adapterPosition
+
+            if(position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position);
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int);
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotasViewHolder {
@@ -39,7 +56,10 @@ class NotaAdapter internal constructor(
         notifyDataSetChanged();
     }
 
-    override fun getItemCount(): Int {
-        return notas.size;
+    override fun getItemCount() = notas.size;
+
+    fun getIndiceNota(position: Int) : notasPessoais{
+        return notas[position]
+
     }
 }

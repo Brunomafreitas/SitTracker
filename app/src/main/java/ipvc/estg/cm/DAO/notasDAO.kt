@@ -16,4 +16,6 @@ interface notasDAO {
 
     @Query("DELETE FROM notasPessoais")
     suspend fun deleteAll()
+
+
 }
