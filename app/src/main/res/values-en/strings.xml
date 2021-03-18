@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SitTracker</string>
+    <string name="loginButtonn" translatable="false">Login</string>
+    <string name="notaspessoais" translatable="false">Personal Notes</string>
+    <string name="Titulo" translatable="false">Title</string>
+    <string name="button_save" translatable="false">Save</string>
+    <string name="empty_not_saved" translatable="false">Note not saved because it is empty.</string>
+    <string name="add_word" translatable="false">Add Note</string>
+    <string name="nota" translatable="false">Note</string>
+    <string name="buttonSubmeterNotaPessoal" translatable="false">Submit</string>
+    <string name="tituloNota" translatable="false">Note title</string>
+    <string name="Editar" translatable="false">Edit</string>
+    <string name="Eliminar" translatable="false">Delete</string>
+</resources>

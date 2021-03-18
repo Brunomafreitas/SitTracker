@@ -27,7 +27,17 @@ class NotasViewModel (application: Application) : AndroidViewModel(application) 
         repository.insert(notas)
     }
 
+    fun getNotasById(id: Int) :LiveData<List<notasPessoais>>{
+        return repository.getNotasById(id);
+    }
 
+     fun deleteNotaById(id:Int)  = viewModelScope.launch{
+         repository.deleteNotasById(id);
+    }
+
+    fun updateNotaById(corpoNota : String, tituloNota :String, id: Int ) = viewModelScope.launch{
+        repository.updateNotasById(corpoNota,tituloNota,id);
+    }
 
 }
 

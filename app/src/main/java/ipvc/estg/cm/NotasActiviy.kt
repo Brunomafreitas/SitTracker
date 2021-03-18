@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.Observer
@@ -24,6 +25,7 @@ private lateinit var notasViewModel: NotasViewModel;
     private val newWordActivityRequestCode = 1;
      lateinit var recyclerView : RecyclerView;
      lateinit var adapter : NotaAdapter;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,11 +58,20 @@ private lateinit var notasViewModel: NotasViewModel;
 
         if(requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK){
             data?.getStringExtra(AddNota.EXTRA_REPLY)?.let {
-                val nota = notasPessoais(tituloNota = it, corpoNota = "algo")
+                val nota = notasPessoais(tituloNota = it, corpoNota = it)
                 notasViewModel.insert(nota)
             }
         }else{
             Toast.makeText(applicationContext, "Nota não inserida", Toast.LENGTH_SHORT).show()
+        }
+
+        if(requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK){
+            data?.getStringExtra(atividadeNotaClicada.EXTRA_REPLY)?.let {
+                val nota = notasPessoais(tituloNota = it, corpoNota = it)
+                notasViewModel.insert(nota)
+            }
+        }else{
+            Toast.makeText(applicationContext, "Nota não editada", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -71,6 +82,7 @@ private lateinit var notasViewModel: NotasViewModel;
 
         intent.putExtra("tituloNota", adapter.getIndiceNota(position).tituloNota);
         intent.putExtra("corpoNota", adapter.getIndiceNota(position).corpoNota);
+        intent.putExtra("id", adapter.getIndiceNota(position).id);
         startActivity(intent);
     }
 
