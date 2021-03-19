@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">SitTracker</string>
+    <string name="app_name" translatable="false">SitTracker</string>
+    <string name="imageFundo" translatable="false">TODO</string>
+    <string name="loginButtonn" translatable="false">Ligar</string>
+    <string name="notaspessoais" translatable="false">Notas Pessoais</string>
+    <string name="Titulo" translatable="false">Titulo</string>
+    <string name="adicionarNota" translatable="false"></string>
+    <string name="hint_word" translatable="false">Word...</string>
+    <string name="button_save" translatable="false">Guardar</string>
+    <string name="empty_not_saved" translatable="false">Nota não guarda pois estava vazia</string>
+    <string name="add_word" translatable="false">Adicionar Nota</string>
+    <string name="nota" translatable="false">Nota</string>
+    <string name="buttonSubmeterNotaPessoal" translatable="false">Submeter</string>
+    <string name="tituloNota" translatable="false">Titulo da nota</string>
+    <string name="nada" translatable="false">Corpo</string>
+    <string name="Editar" translatable="false">Editar</string>
+    <string name="Eliminar" translatable="false">Eliminar</string>
+    <string name="imageLogo" translatable="false">TODO</string>
+    <string name="adicinar_nota" translatable="false">Adicinar nota</string>
 </resources>
