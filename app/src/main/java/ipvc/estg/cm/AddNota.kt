@@ -21,15 +21,20 @@ class AddNota : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
             val replyIntent = Intent()
-            if(TextUtils.isEmpty(editWordView.text) || TextUtils.isEmpty(editWordView.text)){
-                setResult(Activity.RESULT_CANCELED, replyIntent)
-            }else{
-                val note = editWordView.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, note)
-                setResult(Activity.RESULT_OK, replyIntent)
 
-                val noteCorpo:String = editWordView1.text.toString()
-                        replyIntent.putExtra(EXTRA_REPLY1, noteCorpo)
+            if(TextUtils.isEmpty(editWordView.text) || TextUtils.isEmpty(editWordView1.text)){
+
+                setResult(Activity.RESULT_CANCELED, replyIntent)
+
+            }else{
+                val titulo = editWordView.text.toString()
+                val corpo = editWordView1.text.toString()
+
+                replyIntent.putExtra(EXTRA_REPLY,titulo)
+                replyIntent.putExtra(EXTRA_REPLY1,corpo)
+
+                setResult(Activity.RESULT_OK,replyIntent)
+
 
             }
             finish()
@@ -37,7 +42,7 @@ class AddNota : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_REPLY = "ipvc.estg.cm.REPLY"
-        const val EXTRA_REPLY1 = "ipvc.estg.cm.REPLY1"
+        const val EXTRA_REPLY = "tituloNota"
+        const val EXTRA_REPLY1 = "corpoNota"
     }
 }

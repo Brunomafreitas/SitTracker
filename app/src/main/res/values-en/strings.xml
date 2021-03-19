@@ -12,4 +12,5 @@
     <string name="tituloNota" translatable="false">Note title</string>
     <string name="Editar" translatable="false">Edit</string>
     <string name="Eliminar" translatable="false">Delete</string>
+    <string name="adicinar_nota" translatable="false">Add Note</string>
 </resources>

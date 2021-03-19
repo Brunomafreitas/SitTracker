@@ -57,32 +57,32 @@ private lateinit var notasViewModel: NotasViewModel;
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK){
-            data?.getStringExtra(AddNota.EXTRA_REPLY)?.let {
-                val nota = notasPessoais(tituloNota = it, corpoNota = it)
-                notasViewModel.insert(nota)
-            }
+
+            val ptitulo  =data?.getStringExtra(AddNota.EXTRA_REPLY)
+            val pCorpo = data?.getStringExtra(AddNota.EXTRA_REPLY1)
+
+
+                if(ptitulo != null && pCorpo != null) {
+                         val nota1 = notasPessoais(tituloNota = ptitulo.toString(), corpoNota = pCorpo.toString())
+
+                        notasViewModel.insert(nota1)
+        }
+
         }else{
             Toast.makeText(applicationContext, "Nota não inserida", Toast.LENGTH_SHORT).show()
         }
 
-        if(requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK){
-            data?.getStringExtra(atividadeNotaClicada.EXTRA_REPLY)?.let {
-                val nota = notasPessoais(tituloNota = it, corpoNota = it)
-                notasViewModel.insert(nota)
-            }
-        }else{
-            Toast.makeText(applicationContext, "Nota não editada", Toast.LENGTH_SHORT).show()
-        }
+
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this, "Item $position clicked" , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Item $position clicado" , Toast.LENGTH_SHORT).show();
 
         val intent = Intent(this, atividadeNotaClicada::class.java);
-
         intent.putExtra("tituloNota", adapter.getIndiceNota(position).tituloNota);
         intent.putExtra("corpoNota", adapter.getIndiceNota(position).corpoNota);
         intent.putExtra("id", adapter.getIndiceNota(position).id);
+
         startActivity(intent);
     }
 

@@ -25,7 +25,7 @@ interface notasDAO {
     @Update
     suspend fun updateNota(notas: notasPessoais)
 
-    @Query("UPDATE notasPessoais SET corpoNota =:corpoNota AND tituloNota =:tituloNota WHERE id == :id")
+    @Query("UPDATE notasPessoais SET corpoNota =:corpoNota, tituloNota =:tituloNota WHERE id == :id")
     suspend fun updateNotaById(corpoNota: String, tituloNota: String, id: Int);
 
 }

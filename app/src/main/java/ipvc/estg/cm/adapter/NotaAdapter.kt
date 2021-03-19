@@ -48,7 +48,7 @@ private val listener : OnItemClickListener): RecyclerView.Adapter<NotaAdapter.No
     override fun onBindViewHolder(holder: NotasViewHolder, position: Int) {
         val current = notas[position];
         holder.notaItemView.text = current.tituloNota;
-
+        holder.descNotaItemView.text = current.corpoNota;
 
     }
 
@@ -61,6 +61,5 @@ private val listener : OnItemClickListener): RecyclerView.Adapter<NotaAdapter.No
 
     fun getIndiceNota(position: Int) : notasPessoais{
         return notas[position]
-
     }
 }

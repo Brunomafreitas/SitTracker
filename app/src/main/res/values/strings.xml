@@ -12,8 +12,9 @@
     <string name="nota" translatable="false">Nota</string>
     <string name="buttonSubmeterNotaPessoal" translatable="false">Submeter</string>
     <string name="tituloNota" translatable="false">Titulo da nota</string>
-    <string name="nada" translatable="false"></string>
+    <string name="nada" translatable="false">Corpo</string>
     <string name="Editar" translatable="false">Editar</string>
     <string name="Eliminar" translatable="false">Eliminar</string>
     <string name="imageLogo" translatable="false">TODO</string>
+    <string name="adicinar_nota" translatable="false">Adicinar nota</string>
 </resources>

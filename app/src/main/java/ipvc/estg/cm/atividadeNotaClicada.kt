@@ -21,6 +21,7 @@ class atividadeNotaClicada : AppCompatActivity() {
     lateinit var buttonEditar : Button;
     lateinit var tituloNotaClicados : EditText;
     lateinit var corpoNotaClicados : EditText;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_atividade_nota_clicada)
@@ -30,15 +31,15 @@ class atividadeNotaClicada : AppCompatActivity() {
          corpoNotaClicados  = findViewById(R.id.corpoNotaClicado)
 
         var buttonEliminar = findViewById<Button>(R.id.buttonDelete)
-
+        val extras : Bundle? = intent.extras;
         var notaTitulo : String = " ";
         var corpoNota : String = " ";
         notasViewModel = ViewModelProvider(this).get(NotasViewModel::class.java)
-        val extras : Bundle? = intent.extras;
+
         if(extras != null){
             notaTitulo = extras.getString("tituloNota").toString()
             corpoNota = extras.getString("corpoNota").toString()
-            id = extras.getInt("id");
+            id = extras.getInt("id")
         }
 
         tituloNotaClicados.setText(notaTitulo)
@@ -63,20 +64,28 @@ class atividadeNotaClicada : AppCompatActivity() {
     fun onClickEditar(){
 
 
-        val replyIntent = Intent()
+        if(TextUtils.isEmpty(tituloNotaClicados.text) && TextUtils.isEmpty(corpoNotaClicados.text)){
+            notasViewModel.deleteNotaById(id)
+            val intent = Intent(this, NotasActiviy::class.java)
+            startActivity(intent)
+        }else {
+            val replyIntent = Intent()
 
-            notasViewModel.updateNotaById(tituloNota = tituloNotaClicado.text.toString(), corpoNota = corpoNotaClicado.text.toString(), id = id)
+            notasViewModel.updateNotaById(
+                tituloNota = tituloNotaClicado.text.toString(),
+                corpoNota = corpoNotaClicado.text.toString(),
+                id = id
+            )
             val note = tituloNotaClicados.text.toString()
             replyIntent.putExtra(EXTRA_REPLY, note)
 
             val noteCorpo = corpoNotaClicados.text.toString()
             replyIntent.putExtra(EXTRA_REPLY, noteCorpo)
 
-
             setResult(Activity.RESULT_OK, replyIntent)
 
 
-
+        }
 
         finish()
     }
