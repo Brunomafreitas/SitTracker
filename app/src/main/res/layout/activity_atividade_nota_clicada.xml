@@ -12,6 +12,7 @@
         android:layout_width="234dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
+        android:layout_marginTop="176dp"
         android:autofillHints=""
         android:fontFamily="sans-serif-light"
         android:hint="@string/tituloNota"
@@ -19,16 +20,16 @@
         android:minHeight="48dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/corpoNotaClicado" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/corpoNotaClicado"
         android:layout_width="245dp"
         android:layout_height="83dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="168dp"
         android:autofillHints=""
         android:fontFamily="sans-serif-light"
         android:hint="@string/nota"
@@ -36,19 +37,19 @@
         android:minHeight="48dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloNotaClicado" />
 
     <Button
         android:id="@+id/buttonEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="104dp"
         android:backgroundTint="#FFE700"
         android:text="@string/Editar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/corpoNotaClicado" />
 
@@ -56,11 +57,11 @@
         android:id="@+id/buttonDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="104dp"
         android:backgroundTint="#FFE700"
         android:text="@string/Eliminar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/corpoNotaClicado" />
 </androidx.constraintlayout.widget.ConstraintLayout>
