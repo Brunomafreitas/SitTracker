@@ -18,7 +18,7 @@ class AddNota : AppCompatActivity() {
 
         editWordView = findViewById(R.id.edit_word)
         editWordView1 = findViewById(R.id.edit_word2)
-        val button = findViewById<Button>(R.id.button_save)
+        val button = findViewById<Button>(R.id.buttonsave)
         button.setOnClickListener {
             val replyIntent = Intent()
 

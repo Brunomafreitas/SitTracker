@@ -2,23 +2,21 @@ package ipvc.estg.cm
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ipvc.estg.cm.ENTIDADES.notasPessoais
 import ipvc.estg.cm.ViewModel.NotasViewModel
 import ipvc.estg.cm.adapter.NotaAdapter
-import kotlinx.android.synthetic.main.activity_notas_activiy.*
-import kotlinx.android.synthetic.main.recyclerviewitem.*
+import java.util.*
+
 
 class NotasActiviy : AppCompatActivity(), NotaAdapter.OnItemClickListener {
 private lateinit var notasViewModel: NotasViewModel;
@@ -51,6 +49,37 @@ private lateinit var notasViewModel: NotasViewModel;
             startActivityForResult(intent, newWordActivityRequestCode);
 
         }
+
+
+
+        var mIth = ItemTouchHelper(
+            object : ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+                ItemTouchHelper.LEFT
+            ) {
+
+
+                override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: ViewHolder,
+                    target: ViewHolder
+                ): Boolean {
+                    var position_dragged:Int = viewHolder.adapterPosition
+                    var position_target:Int = target.adapterPosition;
+
+                    Collections.swap(notasViewModel.allNotes.value, position_dragged, position_target);
+
+                    adapter.notifyItemMoved(position_dragged, position_target)
+
+                    return false;
+                }
+
+                override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
+                    // remove from adapter
+                }
+            })
+
+        mIth.attachToRecyclerView(recyclerView);
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -85,6 +114,8 @@ private lateinit var notasViewModel: NotasViewModel;
 
         startActivity(intent);
     }
+
+
 
 
 }

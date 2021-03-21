@@ -78,8 +78,4 @@ class atividadeNotaClicada : AppCompatActivity() {
 
     }
 
-    companion object {
-        const val EXTRA_REPLY = "ipvc.estg.cm.REPLY"
-
-    }
 }
