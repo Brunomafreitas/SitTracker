@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import ipvc.estg.cm.ENTIDADES.notasPessoais
 import ipvc.estg.cm.ViewModel.NotasViewModel
@@ -27,8 +28,8 @@ class atividadeNotaClicada : AppCompatActivity() {
         setContentView(R.layout.activity_atividade_nota_clicada)
         buttonApagar = findViewById(R.id.buttonDelete);
         buttonEditar = findViewById(R.id.buttonEdit);
-         tituloNotaClicados  = findViewById(R.id.tituloNotaClicado)
-         corpoNotaClicados  = findViewById(R.id.corpoNotaClicado)
+        tituloNotaClicados  = findViewById(R.id.tituloNotaClicado)
+        corpoNotaClicados  = findViewById(R.id.corpoNotaClicado)
 
         var buttonEliminar = findViewById<Button>(R.id.buttonDelete)
         val extras : Bundle? = intent.extras;
@@ -63,31 +64,18 @@ class atividadeNotaClicada : AppCompatActivity() {
 
     fun onClickEditar(){
 
-
-        if(TextUtils.isEmpty(tituloNotaClicados.text) && TextUtils.isEmpty(corpoNotaClicados.text)){
-            notasViewModel.deleteNotaById(id)
-            val intent = Intent(this, NotasActiviy::class.java)
-            startActivity(intent)
-        }else {
-            val replyIntent = Intent()
-
+        if(TextUtils.isEmpty(tituloNotaClicados.text) || TextUtils.isEmpty(corpoNotaClicados.text)){
+            Toast.makeText(this, "O titulo e corpo da nota devem estar preenchidos!", Toast.LENGTH_SHORT).show();
+        }else{
             notasViewModel.updateNotaById(
                 tituloNota = tituloNotaClicado.text.toString(),
                 corpoNota = corpoNotaClicado.text.toString(),
                 id = id
             )
-            val note = tituloNotaClicados.text.toString()
-            replyIntent.putExtra(EXTRA_REPLY, note)
-
-            val noteCorpo = corpoNotaClicados.text.toString()
-            replyIntent.putExtra(EXTRA_REPLY, noteCorpo)
-
-            setResult(Activity.RESULT_OK, replyIntent)
-
-
+            Toast.makeText(this, "Nota editada!", Toast.LENGTH_SHORT).show();
+            finish()
         }
 
-        finish()
     }
 
     companion object {
