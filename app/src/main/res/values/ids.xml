@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nameUser" type="id" />
+    <item name="email" type="id" />
+    <item name="city" type="id" />
+</resources>

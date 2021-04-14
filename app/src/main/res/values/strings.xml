@@ -17,4 +17,7 @@
     <string name="Eliminar" translatable="false">Eliminar</string>
     <string name="imageLogo" translatable="false">TODO</string>
     <string name="adicinar_nota" translatable="false">Adicinar nota</string>
+    <string name="nameUserMostra" />
+    <string name="email" />
+    <string name="city" />
 </resources>
