@@ -95,6 +95,7 @@ private lateinit var notasViewModel: NotasViewModel;
                          val nota1 = notasPessoais(tituloNota = ptitulo.toString(), corpoNota = pCorpo.toString())
 
                         notasViewModel.insert(nota1)
+                    Toast.makeText(applicationContext, "Nota inserida", Toast.LENGTH_SHORT).show()
         }
 
         }else{
