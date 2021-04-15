@@ -20,4 +20,5 @@
     <string name="nameUserMostra" />
     <string name="email" />
     <string name="city" />
+    <string name="title_activity_mapa_ocorrencias">Map</string>
 </resources>
