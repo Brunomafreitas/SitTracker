@@ -21,4 +21,9 @@
     <string name="email" />
     <string name="city" />
     <string name="title_activity_mapa_ocorrencias">Map</string>
+    <string name="login_form_title">Login</string>
+    <string name="nome_user">Username</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="checkbox" />
 </resources>

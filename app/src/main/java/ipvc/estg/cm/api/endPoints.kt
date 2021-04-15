@@ -15,4 +15,16 @@ interface endPoints {
     @FormUrlEncoded
     @POST("/posts")
     fun postTest (@Field("title") first: String?): Call<OutputPost>
+
+    @FormUrlEncoded
+    @POST("/api/userLog/login")
+    fun login(  @Field("nome") first: String?,
+                @Field("PASSWORD") pass: String?): Call<OutputPost>
+
+    @FormUrlEncoded
+    @POST("/api/registo")
+    fun registo(  @Field("nome") nomeUser: String?,
+                  @Field("PASSWORD") passUser: String?): Call<OutputPost>
+
+
 }
