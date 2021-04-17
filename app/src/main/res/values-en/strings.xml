@@ -13,4 +13,8 @@
     <string name="Editar" translatable="false">Edit</string>
     <string name="Eliminar" translatable="false">Delete</string>
     <string name="adicinar_nota" translatable="false">Add Note</string>
+    <string name="login_form_title">Login</string>
+    <string name="nome_user">Username</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
 </resources>

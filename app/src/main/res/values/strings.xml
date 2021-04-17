@@ -17,13 +17,20 @@
     <string name="Eliminar" translatable="false">Eliminar</string>
     <string name="imageLogo" translatable="false">TODO</string>
     <string name="adicinar_nota" translatable="false">Adicinar nota</string>
-    <string name="nameUserMostra" />
-    <string name="email" />
-    <string name="city" />
-    <string name="title_activity_mapa_ocorrencias">Map</string>
-    <string name="login_form_title">Login</string>
-    <string name="nome_user">Username</string>
-    <string name="pass">Password</string>
-    <string name="login">Login</string>
-    <string name="checkbox" />
+    <string name="nameUserMostra" translatable="false" />
+    <string name="email" translatable="false" />
+    <string name="city" translatable="false" />
+    <string name="title_activity_mapa_ocorrencias" translatable="false">Map</string>
+    <string name="login_form_title">Ligar</string>
+    <string name="nome_user">"Nome "</string>
+    <string name="pass">Palavra-passe</string>
+    <string name="login">Ligar</string>
+    <string name="checkbox" translatable="false" />
+    <string name="buttonLogout">Desligar</string>
+    <string name="tipo">listar tipo</string>
+    <string name="add_ocorrencia">Adicionar Ocorrencia</string>
+    <string name="filtrar1">filtrar</string>
+    <string name="filtrar2">filtrar</string>
+    <string name="filtrarall">filtrar</string>
+    <string name="logout">Desligar</string>
 </resources>

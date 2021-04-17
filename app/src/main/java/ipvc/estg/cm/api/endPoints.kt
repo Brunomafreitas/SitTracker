@@ -6,7 +6,7 @@ import retrofit2.http.*
 interface endPoints {
 
 
-    @GET("/users")
+    @GET("/api/mapas")
     fun getUsers(): Call<List<User>>
 
     @GET("/users/{id}")

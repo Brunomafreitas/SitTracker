@@ -2,11 +2,11 @@ package ipvc.estg.cm
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import ipvc.estg.cm.api.OutputPost
 import ipvc.estg.cm.api.ServiceBuilder
 import ipvc.estg.cm.api.endPoints
@@ -15,7 +15,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class Login : AppCompatActivity() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this@Login, NotasActiviy::class.java)       // Abrir as notas
             startActivity(intent)
         }
+
 
         val button = findViewById<Button>(R.id.activity_main_loginButton)
         button.setOnClickListener {
@@ -60,24 +64,25 @@ class Login : AppCompatActivity() {
 
                                     //Toast.makeText(this@Login, "Toogle On", Toast.LENGTH_SHORT).show()
 
-                                    var token = getSharedPreferences("utilizador", Context.MODE_PRIVATE)
+                                    var token = getSharedPreferences("loginutilizador", Context.MODE_PRIVATE)
+                                    var editor = token.edit()
                                     intent.putExtra("utilizador", nome_user)
                                     intent.putExtra("utilizador", id)
-                                    var editor = token.edit()
+
                                     editor.putString("loginutilizador", nome_user)
                                     editor.putString("loginid", id)
                                     editor.commit()
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
                                 }
-
-
                                 Toast.makeText(this@Login, "Bem vindo " + nome_user, Toast.LENGTH_LONG).show()
 
                                 val intent = Intent(this@Login, mapaOcorrencias::class.java)       // Abrir a main do maps
                                 intent.putExtra("id", id)
                                 if (check1.isChecked) {
+                                    startActivity(intent)
                                     finish()
+
                                 }
                                 startActivity(intent)
 
@@ -96,5 +101,19 @@ class Login : AppCompatActivity() {
                 })
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        var token = getSharedPreferences("utilizador", Context.MODE_PRIVATE)
+        if (token.getString("loginutilizador", " ") != " ") {
+            val intent = Intent(applicationContext, NotasActiviy::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.putExtra("id", token.getString("loginid", " "))
+            finish()
+            startActivity(intent)
+        }
+
+
     }
 }
