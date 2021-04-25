@@ -23,7 +23,11 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        val irparaRegisto = findViewById<Button>(R.id.irRegisto)
+        irparaRegisto.setOnClickListener {
+            val intent = Intent(this@Login, registo::class.java)       // Abrir as notas
+            startActivity(intent)
+        }
         val notas = findViewById<Button>(R.id.notas_button)
         notas.setOnClickListener {
             val intent = Intent(this@Login, NotasActiviy::class.java)       // Abrir as notas

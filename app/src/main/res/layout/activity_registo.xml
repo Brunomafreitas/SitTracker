@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:background="#0F2E29"
     android:orientation="vertical"
-    tools:context=".AddNota">
+    tools:context=".registo">
 
     <EditText
-        android:id="@+id/edit_word"
+        android:id="@+id/insereUsername"
         android:layout_width="234dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
         android:autofillHints=""
         android:backgroundTint="#23CD9E11"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/tituloNota"
+        android:hint="@string/username"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
@@ -30,14 +30,14 @@
         app:layout_constraintVertical_bias="0.169" />
 
     <EditText
-        android:id="@+id/edit_word2"
+        android:id="@+id/inserePass"
         android:layout_width="233dp"
         android:layout_height="137dp"
         android:layout_margin="100dp"
         android:autofillHints=""
         android:backgroundTint="#A8A829"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/nota"
+        android:hint="@string/inserePass"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
@@ -49,12 +49,12 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_word" />
 
     <Button
-        android:id="@+id/buttonsave"
+        android:id="@+id/buttonCriarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="556dp"
         android:background="@drawable/custom_button"
-        android:text="@string/button_save"
+        android:text="@string/criarUser"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -63,4 +63,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+

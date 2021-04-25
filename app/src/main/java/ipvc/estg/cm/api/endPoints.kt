@@ -16,15 +16,27 @@ interface endPoints {
     @POST("/posts")
     fun postTest (@Field("title") first: String?): Call<OutputPost>
 
+    @GET("/meuslim/api/maps2/{nome_user}")
+    fun getIdByUser(@Path("nome_user") nome_user: String?): Call<List<iduser>>
+
     @FormUrlEncoded
     @POST("/api/userLog/login")
     fun login(  @Field("nome") first: String?,
                 @Field("PASSWORD") pass: String?): Call<OutputPost>
 
     @FormUrlEncoded
-    @POST("/api/registo")
+    @POST("/api/Registo")
     fun registo(  @Field("nome") nomeUser: String?,
                   @Field("PASSWORD") passUser: String?): Call<OutputPost>
 
 
+
+    @FormUrlEncoded
+    @POST("/api/add_ocorrencia")
+    fun add_ocorrencias(   @Field("titulo") titulo: String,
+                        @Field("corpo") corpo: String,
+                        @Field("users_id") user_id: Int?,
+                        @Field("lat") lat: Float?,
+                        @Field("long") lng: Float? ,
+                        @Field("tipo_id") tipo_id: Int?) : Call<OutputPost>
 }

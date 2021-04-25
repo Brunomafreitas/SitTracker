@@ -194,7 +194,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         return when (item.itemId) {
 
 
-            R.id.add_ocorrencia -> {
+            R.id.add_ocorrenciaAbre -> {
                 val extras = intent.extras
                 val id = extras?.getString("id")
 
@@ -203,7 +203,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                 intent.putExtra("lat", loc.latitude.toString())
                 intent.putExtra("lng", loc.longitude.toString())
                 intent.putExtra("id", id)
-                //finish()
+
                 startActivity(intent)
 
                 true

@@ -1,17 +1,21 @@
 package ipvc.estg.cm.api
 
-import com.google.gson.internal.GsonBuildConfig
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 object ServiceBuilder {
 
     private val client = OkHttpClient.Builder().build()
 
+
+
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://ocorrenciasipvc.000webhostapp.com/")
+        .baseUrl("https://ocorrenciasipvc.000webhostapp.com")
         .addConverterFactory(GsonConverterFactory.create())
+
         .client(client)
         .build()
 

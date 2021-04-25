@@ -2,42 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/escolasViana"
-        android:title="Escolas de Viana do Castelo"
-        app:showAsAction="never">
 
-    </item>
-
-    <item android:id="@+id/todasEscolas"
-        android:title="Todas as Escolas"
-        app:showAsAction="never">
-
-    </item>
-    <item android:id="@+id/getDistritFromFEUP"
-        android:title="Get Distrito da FEUP"
-        app:showAsAction="never">
-
-    </item>
-    <item android:id="@+id/apagartudo"
-        android:title="Apagar Tudo"
-        app:showAsAction="never">
-
-    </item>
-    <item android:id="@+id/apagarFEUP"
-        android:title="Apagar FEUP"
-        app:showAsAction="never">
-
-    </item>
-    <item android:id="@+id/alterar"
-        android:title="Alterar"
-        app:showAsAction="never">
-
-    </item>
-    <item android:id="@+id/alterarFEUP"
-        android:title="Alterar FEUP"
-        app:showAsAction="never">
-
-    </item>
 
 
 </menu>
