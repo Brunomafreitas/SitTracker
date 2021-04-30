@@ -1,9 +1,9 @@
 package ipvc.estg.cm.api
 
 data class OutputPost (
-    val error: Boolean,
+    val status: Boolean,
     val id: Int,
-    val title: String
+    val MSG: String
 )
 
 

@@ -38,7 +38,7 @@ class registo : AppCompatActivity() {
                         response: Response<OutputPost>
                     ) {
                         if (response.isSuccessful) {
-                            if (response.body()?.error == false) {
+                            if (response.body()?.status == true) {
                                 Toast.makeText(
                                     this@registo,
                                     "Conta criada!",

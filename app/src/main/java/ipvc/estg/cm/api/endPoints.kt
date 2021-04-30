@@ -35,8 +35,8 @@ interface endPoints {
     @POST("/api/add_ocorrencia")
     fun add_ocorrencias(   @Field("titulo") titulo: String,
                         @Field("corpo") corpo: String,
-                        @Field("users_id") user_id: Int?,
+                        @Field("user_id") user_id: Int?,
                         @Field("lat") lat: Float?,
-                        @Field("long") lng: Float? ,
+                        @Field("lng") lng: Float? ,
                         @Field("tipo_id") tipo_id: Int?) : Call<OutputPost>
 }

@@ -54,5 +54,5 @@
     <string name="criarUser">Registar</string>
     <string name="inserePass">Password</string>
     <string name="username">Nome</string>
-    <string name="irRegisto">Button</string>
+    <string name="irRegisto">Registo</string>
 </resources>

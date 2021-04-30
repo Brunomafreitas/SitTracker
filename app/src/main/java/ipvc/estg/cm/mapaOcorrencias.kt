@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 
@@ -49,6 +50,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult?) {
@@ -71,7 +73,10 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                     val extras = intent.extras
                     val id = extras?.getString("id")
                     val tipo_id = extras?.getInt("tipo_id")
-
+                    val tituloTexto : String? = extras?.getString("textoOcorr");
+                    val corpoTexto : String? = extras?.getString("corpoOcorr");
+                    val recebeLatitude : String? = extras?.getString("latOcorr");
+                    val recebeLongitude : String? = extras?.getString("lngOcorr");
 
                     for (user in users) {
 
@@ -214,9 +219,9 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                 intent.putExtra("utilizador", " ")
                 var editor = token.edit()
                 editor.putString("loginutilizador", " ")
+
                 editor.commit()
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                //finish()
                 val intent = Intent(this@mapaOcorrencias, Login::class.java)
                 startActivity(intent)
                 finish()
