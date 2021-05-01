@@ -44,7 +44,7 @@ private lateinit var notasViewModel: NotasViewModel;
         notasViewModel.allNotes.observe(this, Observer { notas ->
             notas?.let { adapter.setNota(it) }
         })
-        val notas = findViewById<Button>(R.id.buttonLogout)
+       /* val notas = findViewById<Button>(R.id.buttonLogout)
         notas.setOnClickListener {
             var token = getSharedPreferences("utilizador", Context.MODE_PRIVATE)
             intent.putExtra("utilizador", " ")
@@ -57,7 +57,7 @@ private lateinit var notasViewModel: NotasViewModel;
             startActivity(intent)
             finish()
 
-        }
+        }*/
 
 
 

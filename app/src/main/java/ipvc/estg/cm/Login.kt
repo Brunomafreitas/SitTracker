@@ -70,12 +70,12 @@ class Login : AppCompatActivity() {
                                     //Toast.makeText(this@Login, "Toogle On", Toast.LENGTH_SHORT).show()
 
                                     var token = getSharedPreferences(
-                                        "loginutilizador",
+                                        "utilizador",
                                         Context.MODE_PRIVATE
                                     )
                                     var editor = token.edit()
-                                    intent.putExtra("utilizador", nome_user)
-                                    intent.putExtra("utilizador", id)
+                                    intent.putExtra("loginutilizador", nome_user)
+                                    intent.putExtra("loginid", id)
 
                                     editor.putString("loginutilizador", nome_user)
                                     editor.putString("loginid", id)
@@ -120,8 +120,8 @@ class Login : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
         var token = getSharedPreferences("utilizador", Context.MODE_PRIVATE)
         if (token.getString("loginutilizador", " ") != " ") {
             val intent = Intent(applicationContext, mapaOcorrencias::class.java)
@@ -130,6 +130,10 @@ class Login : AppCompatActivity() {
             finish()
             startActivity(intent)
         }
+    }
+    override fun onStart() {
+        super.onStart()
+
 
 
     }

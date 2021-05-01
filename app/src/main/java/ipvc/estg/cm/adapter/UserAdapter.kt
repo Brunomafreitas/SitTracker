@@ -25,12 +25,18 @@ class UserAdapter(private val users: List<User>): RecyclerView.Adapter<UserAdapt
 
     class UsersViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
         private val name: TextView = itemView.findViewById(R.id.nameUser)
-        private val email: TextView = itemView.findViewById(R.id.email)
-        private val city: TextView = itemView.findViewById(R.id.city)
+        private val tipoId: TextView = itemView.findViewById(R.id.tipoId)
+        private val corpo : TextView = itemView.findViewById(R.id.corpoOcorr)
 
         fun bind(user: User){
-            name.text = user.name;
-            email.text = user.email
+            name.text ="Utilizador :  " + user.nome;
+            if( user.tipo_id == "1"){
+                tipoId.text = "acidente";
+            }else{
+                tipoId.text = "obras"
+            }
+            //tipoId.text = user.tipo_id
+            corpo.text = user.corpo
         }
     }
 }

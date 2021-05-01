@@ -19,6 +19,16 @@ interface endPoints {
     @GET("/meuslim/api/maps2/{nome_user}")
     fun getIdByUser(@Path("nome_user") nome_user: String?): Call<List<iduser>>
 
+    @GET("/api/ocorrenciaDetalhe")
+    fun getOcorrencias() : Call<List<User>>
+
+
+    //ordenar por tipo
+    @GET("/api/ordenaTipo")
+    fun ordenaPortipo() : Call<List<User>>
+
+
+
     @FormUrlEncoded
     @POST("/api/userLog/login")
     fun login(  @Field("nome") first: String?,

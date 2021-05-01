@@ -34,26 +34,18 @@ class AddOcorrencia : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         button.setOnClickListener {
             val titulo = descricao.text.toString()
             val corpo = corpo.text.toString()
-            val tipoAcidente = tipoAcidente.text.toString();
-            var recebeTipoAcidente : Int = 0;
+            val tipoAcidente : String = tipoAcidente.text.toString();
+
             val request = ServiceBuilder.buildService(endPoints::class.java)
 
-if(tipoAcidente != "1" || tipoAcidente != "0"){
-    Toast.makeText(this@AddOcorrencia, "Esse tipo de acidente não existe", Toast.LENGTH_SHORT).show()
-        }
+
             val replyIntent = Intent()
-            if(tipoAcidente == "1"){
-                recebeTipoAcidente = 1;
-            }else if(tipoAcidente == "0"){
-                recebeTipoAcidente = 0;
-            }
             if (titulo.isEmpty()) {
                 Toast.makeText(this@AddOcorrencia, "Preencher descrição", Toast.LENGTH_SHORT).show()
             }
             else {
-                val call = request.add_ocorrencias(titulo = titulo, corpo = corpo, user_id = id?.toInt(), lat = lat?.toFloat(), lng = lng?.toFloat(), tipo_id = recebeTipoAcidente)
-                //val lat = 0.0
-                //val call = request.add_ocorrencias(titulo = "a", corpo = "a", user_id = 1, lat = lat.toFloat() , lng = lat.toFloat(), tipo_id = 1)
+                val call = request.add_ocorrencias(titulo = titulo, corpo = corpo, user_id = id?.toInt(), lat = lat?.toFloat(), lng = lng?.toFloat(), tipo_id = tipoAcidente.toInt())
+
                 call.enqueue(object : Callback<OutputPost> {
                     override fun onResponse(call: Call<OutputPost>, response: Response<OutputPost>) {
                         if (response.isSuccessful) {
@@ -63,7 +55,7 @@ if(tipoAcidente != "1" || tipoAcidente != "0"){
                                 replyIntent.putExtra(EXTRA_REPLY1,corpo)
                                 replyIntent.putExtra(EXTRA_REPLY2,lat)
                                 replyIntent.putExtra(EXTRA_REPLY3,lng)
-                                replyIntent.putExtra(EXTRA_REPLYTIPOID,recebeTipoAcidente)
+
                                 finish()
                                 Toast.makeText(
                                     this@AddOcorrencia,

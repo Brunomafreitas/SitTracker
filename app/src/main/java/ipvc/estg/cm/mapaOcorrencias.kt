@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 
@@ -63,7 +62,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         }
         // call the service and add markers
         val request = ServiceBuilder.buildService(endPoints::class.java)
-        val call = request.getUsers()
+        val call = request.getOcorrencias()
         var position: LatLng
         createLocationRequest()
         call.enqueue(object : Callback<List<User>> {
@@ -73,54 +72,31 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                     val extras = intent.extras
                     val id = extras?.getString("id")
                     val tipo_id = extras?.getInt("tipo_id")
-                    val tituloTexto : String? = extras?.getString("textoOcorr");
-                    val corpoTexto : String? = extras?.getString("corpoOcorr");
-                    val recebeLatitude : String? = extras?.getString("latOcorr");
-                    val recebeLongitude : String? = extras?.getString("lngOcorr");
 
                     for (user in users) {
 
                         if (tipo_id == 0) {
                             //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
                             if (user.id.toInt() == id?.toInt()) {
-                                position = LatLng(
-                                    user.lat.toString().toDouble(),
-                                    user.lng.toString().toDouble()
-                                )
-                                mMap.addMarker(MarkerOptions().position(position).title(user.name))
+                                position = LatLng(user.lat.toString().toDouble(),
+                                    user.lng.toString().toDouble())
+                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo))
                             } else {
-                                position = LatLng(
-                                    user.lat.toString().toDouble(),
-                                    user.lng.toString().toDouble()
-                                )
-                                mMap.addMarker(
-                                    MarkerOptions().position(position).title(user.name).icon(
-                                        BitmapDescriptorFactory.defaultMarker(
-                                            BitmapDescriptorFactory.HUE_GREEN
-                                        )
-                                    )
-                                )
+                                position = LatLng(user.lat.toString().toDouble(),
+                                    user.lng.toString().toDouble())
+                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
                             }
-                        } else {
-                            if (user.tipo_id.toInt() == tipo_id) {
+                        }
+                        else {
+                            if (user.id.toInt() == tipo_id) {
                                 if (user.id.toInt() == id?.toInt()) {
-                                    position = LatLng(
-                                        user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble()
-                                    )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.name ))
+                                    position = LatLng(user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble())
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo))
                                 } else {
-                                    position = LatLng(
-                                        user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble()
-                                    )
-                                    mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.name).icon(
-                                            BitmapDescriptorFactory.defaultMarker(
-                                                BitmapDescriptorFactory.HUE_GREEN
-                                            )
-                                        )
-                                    )
+                                    position = LatLng(user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble())
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
                                 }
                             }
                         }
@@ -184,6 +160,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -216,13 +193,21 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
             R.id.logout -> {
                 var token = getSharedPreferences("utilizador", Context.MODE_PRIVATE)
-                intent.putExtra("utilizador", " ")
+                intent.putExtra("loginutilizador", " ")
                 var editor = token.edit()
                 editor.putString("loginutilizador", " ")
 
                 editor.commit()
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 val intent = Intent(this@mapaOcorrencias, Login::class.java)
+                startActivity(intent)
+                finish()
+                true
+            }
+
+            R.id.filtarTipoId -> {
+
+                val intent = Intent(this@mapaOcorrencias, AtividadeFiltrar::class.java)
                 startActivity(intent)
                 finish()
                 true

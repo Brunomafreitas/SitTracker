@@ -10,7 +10,7 @@
 
     <EditText
         android:id="@+id/insereUsername"
-        android:layout_width="234dp"
+        android:layout_width="276dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
         android:autofillHints=""
@@ -22,18 +22,17 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FBFBFB"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
+        tools:layout_editor_absoluteY="242dp" />
 
     <EditText
         android:id="@+id/inserePass"
-        android:layout_width="233dp"
-        android:layout_height="137dp"
+        android:layout_width="296dp"
+        android:layout_height="54dp"
         android:layout_margin="100dp"
+        android:layout_marginTop="128dp"
         android:autofillHints=""
         android:backgroundTint="#A8A829"
         android:fontFamily="sans-serif-light"
@@ -44,15 +43,15 @@
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_word" />
+        app:layout_constraintTop_toBottomOf="@+id/insereUsername" />
 
     <Button
         android:id="@+id/buttonCriarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="556dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/custom_button"
         android:text="@string/criarUser"
         android:textAllCaps="false"
@@ -61,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inserePass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

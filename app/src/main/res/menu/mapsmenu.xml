@@ -14,7 +14,11 @@
         android:title="@string/logout"
         app:showAsAction="never">
     </item>
-
+    <item
+        android:id="@+id/filtarTipoId"
+        android:title="@string/filtrarTipoId"
+        app:showAsAction="never">
+    </item>
 
 
 </menu>
