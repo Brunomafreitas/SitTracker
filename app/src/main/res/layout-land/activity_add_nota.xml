@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F2E29"
+    android:orientation="vertical"
+    tools:context=".AddNota">
+
+    <EditText
+        android:id="@+id/edit_word"
+        android:layout_width="234dp"
+        android:layout_height="54dp"
+        android:layout_margin="100dp"
+        android:autofillHints=""
+        android:backgroundTint="#23CD9E11"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/tituloNota"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FBFBFB"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/edit_word2"
+        android:layout_width="233dp"
+        android:layout_height="137dp"
+        android:layout_margin="100dp"
+        android:layout_marginTop="36dp"
+        android:autofillHints=""
+        android:backgroundTint="#A8A829"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/nota"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_word" />
+
+    <Button
+        android:id="@+id/buttonsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:text="@string/button_save"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="556dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

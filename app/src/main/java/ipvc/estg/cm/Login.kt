@@ -77,6 +77,7 @@ class Login : AppCompatActivity() {
                                     intent.putExtra("loginutilizador", nome_user)
                                     intent.putExtra("loginid", id)
 
+
                                     editor.putString("loginutilizador", nome_user)
                                     editor.putString("loginid", id)
                                     editor.commit()
@@ -127,6 +128,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(applicationContext, mapaOcorrencias::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             intent.putExtra("id", token.getString("loginid", " "))
+
             finish()
             startActivity(intent)
         }

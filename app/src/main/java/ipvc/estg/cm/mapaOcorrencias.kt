@@ -4,28 +4,29 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.location.*
 import ipvc.estg.cm.api.ServiceBuilder
 import ipvc.estg.cm.api.User
 import ipvc.estg.cm.api.endPoints
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 @Suppress("DEPRECATION")
 class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
@@ -74,29 +75,96 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                     val tipo_id = extras?.getInt("tipo_id")
 
                     for (user in users) {
+                        if (user.users_id == id) {
+
 
                         if (tipo_id == 0) {
                             //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
                             if (user.id.toInt() == id?.toInt()) {
-                                position = LatLng(user.lat.toString().toDouble(),
-                                    user.lng.toString().toDouble())
-                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo))
+                                position = LatLng(
+                                    user.lat.toString().toDouble(),
+                                    user.lng.toString().toDouble()
+                                )
+                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
                             } else {
-                                position = LatLng(user.lat.toString().toDouble(),
-                                    user.lng.toString().toDouble())
-                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+                                position = LatLng(
+                                    user.lat.toString().toDouble(),
+                                    user.lng.toString().toDouble()
+                                )
+                                mMap.addMarker(
+                                    MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                        BitmapDescriptorFactory.defaultMarker(
+                                            BitmapDescriptorFactory.HUE_GREEN
+                                        )
+                                    )
+                                )
                             }
-                        }
-                        else {
+                        } else {
                             if (user.id.toInt() == tipo_id) {
                                 if (user.id.toInt() == id?.toInt()) {
-                                    position = LatLng(user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble())
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo))
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
                                 } else {
-                                    position = LatLng(user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble())
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.corpo).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)))
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(
+                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                            BitmapDescriptorFactory.defaultMarker(
+                                                BitmapDescriptorFactory.HUE_GREEN
+                                            )
+                                        )
+                                    )
+                                }
+                            }
+                        }
+                    }else {
+                            if (tipo_id == 0) {
+                                //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
+                                if (user.id.toInt() == id?.toInt()) {
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
+                                } else {
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(
+                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                            BitmapDescriptorFactory.defaultMarker(
+                                                BitmapDescriptorFactory.HUE_BLUE
+                                            )
+                                        )
+                                    )
+                                }
+                            } else {
+                                if (user.id.toInt() == tipo_id) {
+                                    if (user.id.toInt() == id?.toInt()) {
+                                        position = LatLng(
+                                            user.lat.toString().toDouble(),
+                                            user.lng.toString().toDouble()
+                                        )
+                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
+                                    } else {
+                                        position = LatLng(
+                                            user.lat.toString().toDouble(),
+                                            user.lng.toString().toDouble()
+                                        )
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                                BitmapDescriptorFactory.defaultMarker(
+                                                    BitmapDescriptorFactory.HUE_BLUE
+                                                )
+                                            )
+                                        )
+                                    }
                                 }
                             }
                         }
@@ -252,4 +320,6 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         finish()
 
     }
+
+
 }
