@@ -1,5 +1,6 @@
 package ipvc.estg.cm.api
 
+import android.graphics.Bitmap
 
 
 data class User (
@@ -11,6 +12,7 @@ data class User (
     var lng: String,
     val nome: String,
     val tipo_id: String,
+    val imagem: Bitmap,
 
 
 

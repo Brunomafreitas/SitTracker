@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -41,11 +42,17 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var lastLocation: Location
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
+    private var continenteLat : Double = 0.0;
+    private var continenteLong : Double = 0.0;
+ private var distanciaString : String? = " ";
 
-
+    private var utilizadorAtual : String = " ";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mapa_ocorrencias)
+
+        continenteLat = 41.7843
+        continenteLong = -8.8148
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -54,11 +61,16 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult?) {
-                locationResult ?: return
-                for (location in locationResult.locations){
-                    // Update UI with location data
-                    // ...
-                }
+              lastLocation = locationResult!!.lastLocation
+                var loc = LatLng(lastLocation.latitude, lastLocation.longitude);
+
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc , 15.0f))
+                findViewById<TextView>(R.id.textLngLAt).setText("Lat " + loc.latitude + " - Long" + loc.longitude)
+                findViewById<TextView>(R.id.textDistancia).setText("Distancia " + calculateDistance(
+                    lastLocation.latitude, lastLocation.longitude,
+                    continenteLat, continenteLong).toString());
+
+
             }
         }
         // call the service and add markers
@@ -73,7 +85,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                     val extras = intent.extras
                     val id = extras?.getString("id")
                     val tipo_id = extras?.getInt("tipo_id")
-
+                    utilizadorAtual = id.toString();
                     for (user in users) {
                         if (user.users_id == id) {
 
@@ -85,14 +97,18 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                     user.lat.toString().toDouble(),
                                     user.lng.toString().toDouble()
                                 )
-                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
+                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                    lastLocation.latitude, lastLocation.longitude,
+                                    position.latitude, position.longitude)))
                             } else {
                                 position = LatLng(
                                     user.lat.toString().toDouble(),
                                     user.lng.toString().toDouble()
                                 )
                                 mMap.addMarker(
-                                    MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                    MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                        lastLocation.latitude, lastLocation.longitude,
+                                        position.latitude, position.longitude)).icon(
                                         BitmapDescriptorFactory.defaultMarker(
                                             BitmapDescriptorFactory.HUE_GREEN
                                         )
@@ -106,14 +122,18 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                        lastLocation.latitude, lastLocation.longitude,
+                                        position.latitude, position.longitude)))
                                 } else {
                                     position = LatLng(
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
                                     mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)).icon(
                                             BitmapDescriptorFactory.defaultMarker(
                                                 BitmapDescriptorFactory.HUE_GREEN
                                             )
@@ -130,14 +150,18 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                        lastLocation.latitude, lastLocation.longitude,
+                                        position.latitude, position.longitude)))
                                 } else {
                                     position = LatLng(
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
                                     mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)).icon(
                                             BitmapDescriptorFactory.defaultMarker(
                                                 BitmapDescriptorFactory.HUE_BLUE
                                             )
@@ -151,14 +175,18 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo))
+                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)))
                                     } else {
                                         position = LatLng(
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
                                         mMap.addMarker(
-                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo).icon(
+                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                                lastLocation.latitude, lastLocation.longitude,
+                                                position.latitude, position.longitude)).icon(
                                                 BitmapDescriptorFactory.defaultMarker(
                                                     BitmapDescriptorFactory.HUE_BLUE
                                                 )
@@ -180,6 +208,15 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
 
     }
+
+    private fun calculateDistance(lat1: Double, lng1: Double, lat2: Double, lng2: Double): Float {
+
+        val results = FloatArray(1);
+        Location.distanceBetween(lat1,lng1,lat2,lng2,results)
+
+        return results[0];
+    }
+
     private fun createLocationRequest() {
         locationRequest = LocationRequest()
         // interval specifies the rate at which your app will like to receive updates. locationRequest.interval = 10000
@@ -276,6 +313,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
             R.id.filtarTipoId -> {
 
                 val intent = Intent(this@mapaOcorrencias, AtividadeFiltrar::class.java)
+                intent.putExtra("utilizadorId", utilizadorAtual);
                 startActivity(intent)
                 finish()
                 true

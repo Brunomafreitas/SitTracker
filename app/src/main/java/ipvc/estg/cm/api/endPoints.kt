@@ -23,11 +23,19 @@ interface endPoints {
     fun getOcorrencias() : Call<List<User>>
 
 
+    @GET("api/ocorrencia/{id}")
+    fun getOcorrenciaDoUserAtual(@Path("id") id:Int):Call<User>
+
     //ordenar por tipo
     @GET("/api/ordenaTipo")
     fun ordenaPortipo() : Call<List<User>>
 
-
+    @FormUrlEncoded
+    @POST("/api/ocorrenciaUP/{id}")
+    fun getOcorrenciaParaEditar(@Path("id") id:Int,
+                                @Field("titulo") titulo: String,
+                                @Field("corpo") corpo: String?
+                                ):Call<OutputPost>
 
     @FormUrlEncoded
     @POST("/api/userLog/login")
@@ -39,7 +47,9 @@ interface endPoints {
     fun registo(  @Field("nome") nomeUser: String?,
                   @Field("PASSWORD") passUser: String?): Call<OutputPost>
 
-
+    @FormUrlEncoded
+    @POST("/api/apagarOcorrencia/{id}")
+    fun apagaOcorrencia(  @Field("id") id: Int): Call<OutputPost>
 
     @FormUrlEncoded
     @POST("/api/add_ocorrencia")

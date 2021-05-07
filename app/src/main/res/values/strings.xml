@@ -20,7 +20,7 @@
     <string name="nameUserMostra" translatable="false" />
     <string name="email" translatable="false" />
     <string name="city" translatable="false" />
-    <string name="title_activity_mapa_ocorrencias" translatable="false">Map</string>
+    <string name="title_activity_mapa_ocorrencias">Mapa</string>
     <string name="login_form_title">Ligar</string>
     <string name="nome_user">"Nome "</string>
     <string name="pass">Palavra-passe</string>
@@ -61,4 +61,5 @@
     <string name="lembrar">Lembrar</string>
     <string name="corpo">Corpo</string>
     <string name="tipoAcidente">Tipo de Acidente</string>
+    <string name="crieUma">Ainda não tem uma conta? Crie uma!</string>
 </resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F2E29"
+    tools:context=".ocorrenciaclicada">
+
+
+    <EditText
+        android:id="@+id/tituloOcorrclicado"
+        android:layout_width="234dp"
+        android:layout_height="54dp"
+        android:layout_margin="100dp"
+        android:autofillHints=""
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/tituloNota"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="145dp" />
+
+    <EditText
+        android:id="@+id/corpoOcorrClicado"
+        android:layout_width="245dp"
+        android:layout_height="83dp"
+        android:layout_margin="100dp"
+        android:autofillHints=""
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/nota"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloOcorrclicado"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <Button
+        android:id="@+id/buttonEditOcorr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/Editar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDeleteOcurr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/Eliminar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

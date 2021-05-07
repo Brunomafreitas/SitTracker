@@ -1,5 +1,7 @@
 package ipvc.estg.cm
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,25 +15,32 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AtividadeFiltrar : AppCompatActivity() {
+class AtividadeFiltrar : AppCompatActivity(), UserAdapter.OnItemClickListener {
     private lateinit var users: List<User>
+    lateinit var adapter : UserAdapter;
+var idUserAtual : String? = " ";
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ocorrencias)
 
 
         val request = ServiceBuilder.buildService(endPoints::class.java)
-        val call = request.ordenaPortipo()
+        val call = request.getOcorrencias()
 
-
+        val extras = intent.extras
+        val id = extras?.getString("utilizadorId")
+        idUserAtual = id;
         call.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 if (response.isSuccessful) {
-                    recyclerview.apply {
-                        setHasFixedSize(true)
-                        layoutManager = LinearLayoutManager(this@AtividadeFiltrar)
-                        adapter = UserAdapter(response.body()!!)
-                    }
+
+                        adapter = UserAdapter(response.body()!!,this@AtividadeFiltrar, this@AtividadeFiltrar);
+                        recyclerview.adapter = adapter;
+                        recyclerview.layoutManager = LinearLayoutManager(this@AtividadeFiltrar);
+
                 }
             }
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
@@ -40,6 +49,23 @@ class AtividadeFiltrar : AppCompatActivity() {
         })
     }
 
+    override fun onItemClick(position: Int) {
+
+        if(idUserAtual == adapter.getIndiceOcorrencia(position).users_id) {
+            Toast.makeText(this, "Item $position clicado", Toast.LENGTH_SHORT).show();
+
+            val intent = Intent(this, ocorrenciaclicada::class.java);
+            intent.putExtra("tituloNotaOcorr", adapter.getIndiceOcorrencia(position).nome);
+            intent.putExtra("corpoNotaOcorr", adapter.getIndiceOcorrencia(position).corpo);
+            intent.putExtra("idOcorr", adapter.getIndiceOcorrencia(position).id);
+            intent.putExtra("idUtilizador", adapter.getIndiceOcorrencia(position).users_id);
+            intent.putExtra("utilizadorId", idUserAtual);
+            startActivity(intent);
+
+        } else{
+            Toast.makeText(this@AtividadeFiltrar, "Não pode abrir esta ocorrência!", Toast.LENGTH_SHORT).show()
+        }
+    }
 
 
 }

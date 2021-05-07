@@ -26,8 +26,16 @@
     <string name="botaoSalvar">Save</string>
     <string name="username">Name</string>
     <string name="irRegisto">Register</string>
-    <string name="criarUser">Register</string>
+    <string name="criarUser">Sign Up</string>
     <string name="inserePass">Password</string>
-    <string name="title_activity_registo">register</string>
+    <string name="title_activity_registo">Sign Up</string>
     <string name="descricao">Description</string>
+    <string name="filtrarTipoId">Filter type</string>
+    <string name="lembrar">Remember</string>
+    <string name="corpo">Body</string>
+    <string name="tipoId">Type ID</string>
+    <string name="tipoAcidente">Accident</string>
+    <string name="crieUma">Don´t have any account yet? Create one!</string>
+    <string name="title_activity_mapa_ocorrencias" translatable="false">Map</string>
+    <string name="filtrarPorTipo">Filter type</string>
 </resources>

@@ -63,6 +63,13 @@ class AddOcorrencia : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
+                            else{
+                                Toast.makeText(
+                                    this@AddOcorrencia,
+                                    "Algo correu mal",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                         }
                     }
                     override fun onFailure(call: Call<OutputPost>, t: Throwable) {

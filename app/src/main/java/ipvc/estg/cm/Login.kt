@@ -2,6 +2,7 @@ package ipvc.estg.cm
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -68,6 +69,8 @@ class Login : AppCompatActivity() {
                                 if (check1.isChecked) {
 
                                     //Toast.makeText(this@Login, "Toogle On", Toast.LENGTH_SHORT).show()
+
+
 
                                     var token = getSharedPreferences(
                                         "utilizador",
