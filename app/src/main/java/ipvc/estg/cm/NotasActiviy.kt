@@ -1,8 +1,11 @@
 package ipvc.estg.cm
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -24,21 +27,38 @@ private lateinit var notasViewModel: NotasViewModel;
      lateinit var recyclerView : RecyclerView;
      lateinit var adapter : NotaAdapter;
 
-
+    private lateinit var prefs: SharedPreferences;
+    private var muda : String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas_activiy)
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        adapter = NotaAdapter(this,this);
+        adapter = NotaAdapter(this, this);
         recyclerView.adapter = adapter;
         recyclerView.layoutManager = LinearLayoutManager(this);
 
 
+
         notasViewModel = ViewModelProvider(this).get(NotasViewModel::class.java)
-        notasViewModel.allNotes.observe(this, Observer{ notas ->
-        notas?.let {adapter.setNota(it)}
+        notasViewModel.allNotes.observe(this, Observer { notas ->
+            notas?.let { adapter.setNota(it) }
         })
+       /* val notas = findViewById<Button>(R.id.buttonLogout)
+        notas.setOnClickListener {
+            var token = getSharedPreferences("utilizador", Context.MODE_PRIVATE)
+            intent.putExtra("utilizador", " ")
+            var editor = token.edit()
+            editor.putString("loginutilizador", " ")
+            editor.commit()
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            //finish()
+            val intent = Intent(this@NotasActiviy, Login::class.java)
+            startActivity(intent)
+            finish()
+
+        }*/
+
 
 
 

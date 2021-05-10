@@ -5,62 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F2E29"
-    android:orientation="vertical"
-    tools:context=".AddNota">
+    tools:context=".ocorrenciaclicada">
+
 
     <EditText
-        android:id="@+id/edit_word"
+        android:id="@+id/tituloOcorrclicado"
         android:layout_width="234dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
         android:autofillHints=""
-        android:backgroundTint="#23CD9E11"
         android:fontFamily="sans-serif-light"
         android:hint="@string/tituloNota"
-        android:inputType="textAutoComplete"
-        android:minHeight="48dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FBFBFB"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
-
-    <EditText
-        android:id="@+id/edit_word2"
-        android:layout_width="233dp"
-        android:layout_height="137dp"
-        android:layout_margin="100dp"
-        android:autofillHints=""
-        android:backgroundTint="#A8A829"
-        android:fontFamily="sans-serif-light"
-        android:hint="@string/nota"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_word" />
+        tools:layout_editor_absoluteY="7dp" />
+
+    <EditText
+        android:id="@+id/corpoOcorrClicado"
+        android:layout_width="245dp"
+        android:layout_height="83dp"
+        android:layout_margin="100dp"
+        android:layout_marginTop="80dp"
+        android:autofillHints=""
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/nota"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloOcorrclicado" />
 
     <Button
-        android:id="@+id/buttonsave"
+        android:id="@+id/buttonEditOcorr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="556dp"
+        android:layout_marginTop="268dp"
         android:background="@drawable/custom_button"
-        android:text="@string/button_save"
+        android:text="@string/Editar"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/buttonDeleteOcurr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/Eliminar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

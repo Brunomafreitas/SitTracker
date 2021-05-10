@@ -22,18 +22,17 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FBFBFB"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/edit_word2"
         android:layout_width="233dp"
         android:layout_height="137dp"
         android:layout_margin="100dp"
+        android:layout_marginTop="36dp"
         android:autofillHints=""
         android:backgroundTint="#A8A829"
         android:fontFamily="sans-serif-light"
@@ -44,7 +43,7 @@
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_word" />
 
@@ -52,7 +51,6 @@
         android:id="@+id/buttonsave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="556dp"
         android:background="@drawable/custom_button"
         android:text="@string/button_save"
         android:textAllCaps="false"
@@ -61,6 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="556dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

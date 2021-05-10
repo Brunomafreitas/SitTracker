@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="#0F2E29">
+    android:background="#0F2E29"
+    android:orientation="horizontal">
 
 
     <TextView
@@ -14,32 +14,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:padding="10dp"
-        android:text="@string/nameUserMostra"
+        android:text="@string/nome_user"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/tipoId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="-300dp"
         android:layout_marginTop="50dp"
         android:layout_weight="1"
         android:padding="10dp"
-        android:text="@string/email"
+        android:text="@string/tipoId"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
     <TextView
-        android:id="@+id/city"
+        android:id="@+id/corpoOcorr"
         android:layout_width="0dp"
-        android:layout_height="197dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="-300dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_weight="1"
         android:padding="10dp"
-        android:text="@string/city"
+
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
-
 </LinearLayout>

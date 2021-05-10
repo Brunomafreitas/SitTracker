@@ -24,7 +24,7 @@ private val listener : OnItemClickListener): RecyclerView.Adapter<NotaAdapter.No
         val descNotaItemView: TextView = itemView.findViewById(R.id.corpoNota)
 
         init {
-                itemView.setOnClickListener(this)
+            itemView.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {

@@ -13,4 +13,29 @@
     <string name="Editar" translatable="false">Edit</string>
     <string name="Eliminar" translatable="false">Delete</string>
     <string name="adicinar_nota" translatable="false">Add Note</string>
+    <string name="login_form_title">Login</string>
+    <string name="nome_user">Username</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="nada" translatable="false">Body</string>
+    <string name="buttonLogout">Off</string>
+    <string name="tipo">Type list</string>
+    <string name="add_ocorrencia">Add problem</string>
+    <string name="logout">Off</string>
+    <string name="save">Save</string>
+    <string name="botaoSalvar">Save</string>
+    <string name="username">Name</string>
+    <string name="irRegisto">Register</string>
+    <string name="criarUser">Sign Up</string>
+    <string name="inserePass">Password</string>
+    <string name="title_activity_registo">Sign Up</string>
+    <string name="descricao">Description</string>
+    <string name="filtrarTipoId">Filter type</string>
+    <string name="lembrar">Remember</string>
+    <string name="corpo">Body</string>
+    <string name="tipoId">Type ID</string>
+    <string name="tipoAcidente">Accident</string>
+    <string name="crieUma">Don´t have any account yet? Create one!</string>
+    <string name="title_activity_mapa_ocorrencias" translatable="false">Map</string>
+    <string name="filtrarPorTipo">Filter type</string>
 </resources>

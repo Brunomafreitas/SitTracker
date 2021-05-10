@@ -1,23 +1,66 @@
 <resources>
-    <string name="app_name" translatable="false">SitTracker</string>
+    <string name="app_name">SitTracker</string>
     <string name="imageFundo" translatable="false">TODO</string>
-    <string name="loginButtonn" translatable="false">Ligar</string>
-    <string name="notaspessoais" translatable="false">Notas Pessoais</string>
-    <string name="Titulo" translatable="false">Titulo</string>
+    <string name="loginButtonn">Ligar</string>
+    <string name="notaspessoais">Notas Pessoais</string>
+    <string name="Titulo">Titulo</string>
     <string name="adicionarNota" translatable="false"></string>
     <string name="hint_word" translatable="false">Word...</string>
-    <string name="button_save" translatable="false">Guardar</string>
-    <string name="empty_not_saved" translatable="false">Nota não guarda pois estava vazia</string>
-    <string name="add_word" translatable="false">Adicionar Nota</string>
-    <string name="nota" translatable="false">Nota</string>
-    <string name="buttonSubmeterNotaPessoal" translatable="false">Submeter</string>
-    <string name="tituloNota" translatable="false">Titulo da nota</string>
-    <string name="nada" translatable="false">Corpo</string>
-    <string name="Editar" translatable="false">Editar</string>
-    <string name="Eliminar" translatable="false">Eliminar</string>
+    <string name="button_save">Guardar</string>
+    <string name="empty_not_saved">Nota não guarda pois estava vazia</string>
+    <string name="add_word">Adicionar Nota</string>
+    <string name="nota">Nota</string>
+    <string name="buttonSubmeterNotaPessoal">Submeter</string>
+    <string name="tituloNota">Titulo da nota</string>
+    <string name="nada">Corpo</string>
+    <string name="Editar">Editar</string>
+    <string name="Eliminar">Eliminar</string>
     <string name="imageLogo" translatable="false">TODO</string>
-    <string name="adicinar_nota" translatable="false">Adicinar nota</string>
-    <string name="nameUserMostra" />
-    <string name="email" />
-    <string name="city" />
+    <string name="adicinar_nota">Adicinar nota</string>
+    <string name="nameUserMostra" translatable="false" />
+    <string name="email" translatable="false" />
+    <string name="city" translatable="false" />
+    <string name="title_activity_mapa_ocorrencias">Mapa</string>
+    <string name="login_form_title">Ligar</string>
+    <string name="nome_user">"Nome "</string>
+    <string name="pass">Palavra-passe</string>
+    <string name="login">Ligar</string>
+    <string name="checkbox" translatable="false" />
+    <string name="buttonLogout">Desligar</string>
+    <string name="tipo">listar tipo</string>
+    <string name="add_ocorrencia">Adicionar Ocorrencia</string>
+    <string name="filtrar1" translatable="false">filtrar</string>
+    <string name="filtrar2" translatable="false">filtrar</string>
+    <string name="filtrarall" translatable="false">filtrar</string>
+    <string name="logout">Desligar</string>
+    <string name="descricao">Descrição</string>
+    <string name="save">Guardar</string>
+    <string name="botaoSalvar">Guardar</string>
+
+
+    <string-array name="tipo">
+        <item>Acidente</item>
+        <item>Obras</item>
+    </string-array>
+    <string name="title_activity_registo">registo</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="criarUser">Registar</string>
+    <string name="inserePass">Password</string>
+    <string name="username">Nome</string>
+    <string name="irRegisto">Registo</string>
+    <string name="filtrarPorTipo">Filtrar por Tipo</string>
+    <string name="filtrarTipoId">Filtrar Tipo</string>
+    <string name="tipoId">Tipo Id</string>
+    <string name="lembrar">Lembrar</string>
+    <string name="corpo">Corpo</string>
+    <string name="tipoAcidente">Tipo de Acidente</string>
+    <string name="crieUma">Ainda não tem uma conta? Crie uma!</string>
+    <string name="Mapa">Mapa</string>
 </resources>
