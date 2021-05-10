@@ -13,6 +13,7 @@ data class User (
     val nome: String,
     val tipo_id: String,
     val imagem: Bitmap,
+    val tipo : String,
 
 
 

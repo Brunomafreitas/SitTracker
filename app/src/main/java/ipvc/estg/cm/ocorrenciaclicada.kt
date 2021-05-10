@@ -1,5 +1,6 @@
 package ipvc.estg.cm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -111,7 +112,7 @@ class ocorrenciaclicada : AppCompatActivity() {
     fun onClickEliminar(){
 
             val request = ServiceBuilder.buildService(endPoints::class.java)
-            val call = request.apagaOcorrencia(id)
+            val call = request.apagaOcorrencia(id, tituloNotaClicados.text.toString())
             call.enqueue(object : Callback<OutputPost> {
                 override fun onResponse(
                     call: Call<OutputPost>,
@@ -119,7 +120,7 @@ class ocorrenciaclicada : AppCompatActivity() {
                 ) {
 
                     if (response.isSuccessful) {
-                        if (response.body()?.status == false) {
+                        if (!response.body()!!.status) {
                             Toast.makeText(
                                 this@ocorrenciaclicada,
                                 "Não foi possivel apagar a ocorrencia",
@@ -132,7 +133,10 @@ class ocorrenciaclicada : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            finish()
+                            val intent = Intent(this@ocorrenciaclicada, mapaOcorrencias::class.java)
+
+                            startActivity(intent)
+
                         }
                     }
                 }

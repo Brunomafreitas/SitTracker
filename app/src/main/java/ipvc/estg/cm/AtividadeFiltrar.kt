@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import ipvc.estg.cm.adapter.UserAdapter
@@ -19,7 +20,7 @@ class AtividadeFiltrar : AppCompatActivity(), UserAdapter.OnItemClickListener {
     private lateinit var users: List<User>
     lateinit var adapter : UserAdapter;
 var idUserAtual : String? = " ";
-
+    lateinit var buttonVoltarMapa: Button;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,12 @@ var idUserAtual : String? = " ";
         setContentView(R.layout.activity_ocorrencias)
 
 
+        buttonVoltarMapa = findViewById<Button>(R.id.VoltarMapa);
+        buttonVoltarMapa.setOnClickListener {
+            val intent = Intent(this@AtividadeFiltrar, mapaOcorrencias::class.java)
+
+            startActivity(intent)
+        }
         val request = ServiceBuilder.buildService(endPoints::class.java)
         val call = request.getOcorrencias()
 

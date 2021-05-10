@@ -49,7 +49,8 @@ interface endPoints {
 
     @FormUrlEncoded
     @POST("/api/apagarOcorrencia/{id}")
-    fun apagaOcorrencia(  @Field("id") id: Int): Call<OutputPost>
+    fun apagaOcorrencia(@Path("id") id: Int,
+                        @Field("titulo") titulo: String): Call<OutputPost>
 
     @FormUrlEncoded
     @POST("/api/add_ocorrencia")

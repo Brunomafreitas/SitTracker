@@ -62,4 +62,5 @@
     <string name="corpo">Corpo</string>
     <string name="tipoAcidente">Tipo de Acidente</string>
     <string name="crieUma">Ainda não tem uma conta? Crie uma!</string>
+    <string name="Mapa">Mapa</string>
 </resources>

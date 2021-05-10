@@ -57,11 +57,11 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
+        createLocationRequest()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult?) {
-              lastLocation = locationResult!!.lastLocation
+                lastLocation = locationResult!!.lastLocation
                 var loc = LatLng(lastLocation.latitude, lastLocation.longitude);
 
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc , 15.0f))
@@ -73,137 +73,6 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
             }
         }
-        // call the service and add markers
-        val request = ServiceBuilder.buildService(endPoints::class.java)
-        val call = request.getOcorrencias()
-        var position: LatLng
-        createLocationRequest()
-        call.enqueue(object : Callback<List<User>> {
-            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
-                if (response.isSuccessful) {
-                    users = response.body()!!
-                    val extras = intent.extras
-                    val id = extras?.getString("id")
-                    val tipo_id = extras?.getInt("tipo_id")
-                    utilizadorAtual = id.toString();
-                    for (user in users) {
-                        if (user.users_id == id) {
-
-
-                        if (tipo_id == 0) {
-                            //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
-                            if (user.id.toInt() == id?.toInt()) {
-                                position = LatLng(
-                                    user.lat.toString().toDouble(),
-                                    user.lng.toString().toDouble()
-                                )
-                                mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                    lastLocation.latitude, lastLocation.longitude,
-                                    position.latitude, position.longitude)))
-                            } else {
-                                position = LatLng(
-                                    user.lat.toString().toDouble(),
-                                    user.lng.toString().toDouble()
-                                )
-                                mMap.addMarker(
-                                    MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                        lastLocation.latitude, lastLocation.longitude,
-                                        position.latitude, position.longitude)).icon(
-                                        BitmapDescriptorFactory.defaultMarker(
-                                            BitmapDescriptorFactory.HUE_GREEN
-                                        )
-                                    )
-                                )
-                            }
-                        } else {
-                            if (user.id.toInt() == tipo_id) {
-                                if (user.id.toInt() == id?.toInt()) {
-                                    position = LatLng(
-                                        user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble()
-                                    )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                        lastLocation.latitude, lastLocation.longitude,
-                                        position.latitude, position.longitude)))
-                                } else {
-                                    position = LatLng(
-                                        user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble()
-                                    )
-                                    mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)).icon(
-                                            BitmapDescriptorFactory.defaultMarker(
-                                                BitmapDescriptorFactory.HUE_GREEN
-                                            )
-                                        )
-                                    )
-                                }
-                            }
-                        }
-                    }else {
-                            if (tipo_id == 0) {
-                                //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
-                                if (user.id.toInt() == id?.toInt()) {
-                                    position = LatLng(
-                                        user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble()
-                                    )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                        lastLocation.latitude, lastLocation.longitude,
-                                        position.latitude, position.longitude)))
-                                } else {
-                                    position = LatLng(
-                                        user.lat.toString().toDouble(),
-                                        user.lng.toString().toDouble()
-                                    )
-                                    mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)).icon(
-                                            BitmapDescriptorFactory.defaultMarker(
-                                                BitmapDescriptorFactory.HUE_BLUE
-                                            )
-                                        )
-                                    )
-                                }
-                            } else {
-                                if (user.id.toInt() == tipo_id) {
-                                    if (user.id.toInt() == id?.toInt()) {
-                                        position = LatLng(
-                                            user.lat.toString().toDouble(),
-                                            user.lng.toString().toDouble()
-                                        )
-                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)))
-                                    } else {
-                                        position = LatLng(
-                                            user.lat.toString().toDouble(),
-                                            user.lng.toString().toDouble()
-                                        )
-                                        mMap.addMarker(
-                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                                lastLocation.latitude, lastLocation.longitude,
-                                                position.latitude, position.longitude)).icon(
-                                                BitmapDescriptorFactory.defaultMarker(
-                                                    BitmapDescriptorFactory.HUE_BLUE
-                                                )
-                                            )
-                                        )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            override fun onFailure(call: Call<List<User>>, t: Throwable) {
-                Toast.makeText(this@mapaOcorrencias, "${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
-
 
 
 
@@ -314,6 +183,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                 val intent = Intent(this@mapaOcorrencias, AtividadeFiltrar::class.java)
                 intent.putExtra("utilizadorId", utilizadorAtual);
+                onPause()
                 startActivity(intent)
                 finish()
                 true
@@ -344,6 +214,141 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
     {
         super.onResume()
         startLocationUpdates()
+
+
+
+        // call the service and add markers
+        val request = ServiceBuilder.buildService(endPoints::class.java)
+        val call = request.getOcorrencias()
+        var position: LatLng
+
+        call.enqueue(object : Callback<List<User>> {
+            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+                if (response.isSuccessful) {
+                    users = response.body()!!
+                    val extras = intent.extras
+                    val id = extras?.getString("id")
+                    val tipo_id = extras?.getInt("tipo_id")
+                    utilizadorAtual = id.toString();
+                    for (user in users) {
+                        if (user.users_id == id) {
+
+
+                            if (tipo_id == 0) {
+                                //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
+                                if (user.id.toInt() == id?.toInt()) {
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                        lastLocation.latitude, lastLocation.longitude,
+                                        position.latitude, position.longitude)))
+                                } else {
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(
+                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)).icon(
+                                            BitmapDescriptorFactory.defaultMarker(
+                                                BitmapDescriptorFactory.HUE_GREEN
+                                            )
+                                        )
+                                    )
+                                }
+                            } else {
+                                if (user.id.toInt() == tipo_id) {
+                                    if (user.id.toInt() == id?.toInt()) {
+                                        position = LatLng(
+                                            user.lat.toString().toDouble(),
+                                            user.lng.toString().toDouble()
+                                        )
+                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)))
+                                    } else {
+                                        position = LatLng(
+                                            user.lat.toString().toDouble(),
+                                            user.lng.toString().toDouble()
+                                        )
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                                lastLocation.latitude, lastLocation.longitude,
+                                                position.latitude, position.longitude)).icon(
+                                                BitmapDescriptorFactory.defaultMarker(
+                                                    BitmapDescriptorFactory.HUE_GREEN
+                                                )
+                                            )
+                                        )
+                                    }
+                                }
+                            }
+                        }else {
+                            if (tipo_id == 0) {
+                                //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
+                                if (user.id.toInt() == id?.toInt()) {
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                        lastLocation.latitude, lastLocation.longitude,
+                                        position.latitude, position.longitude)))
+                                } else {
+                                    position = LatLng(
+                                        user.lat.toString().toDouble(),
+                                        user.lng.toString().toDouble()
+                                    )
+                                    mMap.addMarker(
+                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)).icon(
+                                            BitmapDescriptorFactory.defaultMarker(
+                                                BitmapDescriptorFactory.HUE_BLUE
+                                            )
+                                        )
+                                    )
+                                }
+                            } else {
+                                if (user.id.toInt() == tipo_id) {
+                                    if (user.id.toInt() == id?.toInt()) {
+                                        position = LatLng(
+                                            user.lat.toString().toDouble(),
+                                            user.lng.toString().toDouble()
+                                        )
+                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                            lastLocation.latitude, lastLocation.longitude,
+                                            position.latitude, position.longitude)))
+                                    } else {
+                                        position = LatLng(
+                                            user.lat.toString().toDouble(),
+                                            user.lng.toString().toDouble()
+                                        )
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
+                                                lastLocation.latitude, lastLocation.longitude,
+                                                position.latitude, position.longitude)).icon(
+                                                BitmapDescriptorFactory.defaultMarker(
+                                                    BitmapDescriptorFactory.HUE_BLUE
+                                                )
+                                            )
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            override fun onFailure(call: Call<List<User>>, t: Throwable) {
+                Toast.makeText(this@mapaOcorrencias, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+        // call the service and add markers
+
     }
 
     public override fun onRestart() {
