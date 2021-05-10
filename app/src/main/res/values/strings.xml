@@ -56,7 +56,7 @@
     <string name="username">Nome</string>
     <string name="irRegisto">Registo</string>
     <string name="filtrarPorTipo">Filtrar por Tipo</string>
-    <string name="filtrarTipoId">Mostrar Notas</string>
+    <string name="filtrarTipoId">Mostrar Ocorrências</string>
     <string name="tipoId">Tipo Id</string>
     <string name="lembrar">Lembrar</string>
     <string name="corpo">Corpo</string>

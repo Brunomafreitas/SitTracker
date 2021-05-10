@@ -45,7 +45,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
     private var continenteLat : Double = 0.0;
     private var continenteLong : Double = 0.0;
  private var distanciaString : String? = " ";
-
+    private  var id : String? = " "
+    private  var tipo_id : Int? = 0;
     private var utilizadorAtual : String = " ";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +74,9 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
             }
         }
-
+        val extras = intent.extras
+         id = extras?.getString("id")
+        tipo_id = extras?.getInt("tipo_id")
 
 
     }
@@ -226,9 +229,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 if (response.isSuccessful) {
                     users = response.body()!!
-                    val extras = intent.extras
-                    val id = extras?.getString("id")
-                    val tipo_id = extras?.getInt("tipo_id")
+
                     utilizadorAtual = id.toString();
                     for (user in users) {
                         if (user.users_id == id) {

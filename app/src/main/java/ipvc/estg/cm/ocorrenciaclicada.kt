@@ -133,10 +133,7 @@ class ocorrenciaclicada : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            val intent = Intent(this@ocorrenciaclicada, mapaOcorrencias::class.java)
-
-                            startActivity(intent)
-
+                            finish()
                         }
                     }
                 }
