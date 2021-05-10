@@ -242,23 +242,35 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                        lastLocation.latitude, lastLocation.longitude,
-                                        position.latitude, position.longitude)))
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                    lastLocation.latitude, lastLocation.longitude,
+                                                    position.latitude, position.longitude
+                                                )
+                                            )
+                                        )
+                                    }
                                 } else {
                                     position = LatLng(
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)).icon(
-                                            BitmapDescriptorFactory.defaultMarker(
-                                                BitmapDescriptorFactory.HUE_GREEN
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                    lastLocation.latitude, lastLocation.longitude,
+                                                    position.latitude, position.longitude
+                                                )
+                                            ).icon(
+                                                BitmapDescriptorFactory.defaultMarker(
+                                                    BitmapDescriptorFactory.HUE_GREEN
+                                                )
                                             )
                                         )
-                                    )
+                                    }
                                 }
                             } else {
                                 if (user.id.toInt() == tipo_id) {
@@ -267,23 +279,39 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)))
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                            mMap.addMarker(
+                                                MarkerOptions().position(position).title(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude,
+                                                        position.latitude,
+                                                        position.longitude
+                                                    )
+                                                )
+                                            )
+                                        }
                                     } else {
                                         position = LatLng(
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        mMap.addMarker(
-                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                                lastLocation.latitude, lastLocation.longitude,
-                                                position.latitude, position.longitude)).icon(
-                                                BitmapDescriptorFactory.defaultMarker(
-                                                    BitmapDescriptorFactory.HUE_GREEN
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                            mMap.addMarker(
+                                                MarkerOptions().position(position).title(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude,
+                                                        position.latitude,
+                                                        position.longitude
+                                                    )
+                                                ).icon(
+                                                    BitmapDescriptorFactory.defaultMarker(
+                                                        BitmapDescriptorFactory.HUE_GREEN
+                                                    )
                                                 )
                                             )
-                                        )
+                                        }
                                     }
                                 }
                             }
@@ -295,23 +323,35 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                        lastLocation.latitude, lastLocation.longitude,
-                                        position.latitude, position.longitude)))
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                    lastLocation.latitude, lastLocation.longitude,
+                                                    position.latitude, position.longitude
+                                                )
+                                            )
+                                        )
+                                    }
                                 } else {
                                     position = LatLng(
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    mMap.addMarker(
-                                        MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)).icon(
-                                            BitmapDescriptorFactory.defaultMarker(
-                                                BitmapDescriptorFactory.HUE_BLUE
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                        mMap.addMarker(
+                                            MarkerOptions().position(position).title(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                    lastLocation.latitude, lastLocation.longitude,
+                                                    position.latitude, position.longitude
+                                                )
+                                            ).icon(
+                                                BitmapDescriptorFactory.defaultMarker(
+                                                    BitmapDescriptorFactory.HUE_BLUE
+                                                )
                                             )
                                         )
-                                    )
+                                    }
                                 }
                             } else {
                                 if (user.id.toInt() == tipo_id) {
@@ -320,23 +360,39 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        mMap.addMarker(MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                            lastLocation.latitude, lastLocation.longitude,
-                                            position.latitude, position.longitude)))
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                            mMap.addMarker(
+                                                MarkerOptions().position(position).title(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude,
+                                                        position.latitude,
+                                                        position.longitude
+                                                    )
+                                                )
+                                            )
+                                        }
                                     } else {
                                         position = LatLng(
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        mMap.addMarker(
-                                            MarkerOptions().position(position).title(user.nome + " - " + user.titulo + " - " + user.corpo  + "Distancia " + calculateDistance(
-                                                lastLocation.latitude, lastLocation.longitude,
-                                                position.latitude, position.longitude)).icon(
-                                                BitmapDescriptorFactory.defaultMarker(
-                                                    BitmapDescriptorFactory.HUE_BLUE
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
+                                            mMap.addMarker(
+                                                MarkerOptions().position(position).title(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude,
+                                                        position.latitude,
+                                                        position.longitude
+                                                    )
+                                                ).icon(
+                                                    BitmapDescriptorFactory.defaultMarker(
+                                                        BitmapDescriptorFactory.HUE_BLUE
+                                                    )
                                                 )
                                             )
-                                        )
+                                        }
                                     }
                                 }
                             }
