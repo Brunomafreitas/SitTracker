@@ -56,11 +56,11 @@
     <string name="username">Nome</string>
     <string name="irRegisto">Registo</string>
     <string name="filtrarPorTipo">Filtrar por Tipo</string>
-    <string name="filtrarTipoId">Filtrar Tipo</string>
+    <string name="filtrarTipoId">Mostrar Notas</string>
     <string name="tipoId">Tipo Id</string>
     <string name="lembrar">Lembrar</string>
     <string name="corpo">Corpo</string>
     <string name="tipoAcidente">Tipo de Acidente</string>
     <string name="crieUma">Ainda não tem uma conta? Crie uma!</string>
-    <string name="Mapa">Mapa</string>
+    <string name="Mapa" translatable="false">Mapa</string>
 </resources>

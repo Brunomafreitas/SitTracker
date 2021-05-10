@@ -30,7 +30,7 @@
     <string name="inserePass">Password</string>
     <string name="title_activity_registo">Sign Up</string>
     <string name="descricao">Description</string>
-    <string name="filtrarTipoId">Filter type</string>
+    <string name="filtrarTipoId">Show ocorrencies</string>
     <string name="lembrar">Remember</string>
     <string name="corpo">Body</string>
     <string name="tipoId">Type ID</string>
