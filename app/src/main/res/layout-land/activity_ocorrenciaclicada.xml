@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F2E29"
-    tools:context=".atividadeNotaClicada">
+    tools:context=".ocorrenciaclicada">
+
 
     <EditText
-        android:id="@+id/tituloNotaClicado"
+        android:id="@+id/tituloOcorrclicado"
         android:layout_width="234dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="176dp"
         android:autofillHints=""
         android:fontFamily="sans-serif-light"
         android:hint="@string/tituloNota"
@@ -22,16 +22,16 @@
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="7dp" />
 
     <EditText
-        android:id="@+id/corpoNotaClicado"
+        android:id="@+id/corpoOcorrClicado"
         android:layout_width="245dp"
         android:layout_height="83dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="80dp"
         android:autofillHints=""
         android:fontFamily="sans-serif-light"
         android:hint="@string/nota"
@@ -40,37 +40,37 @@
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloNotaClicado" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloOcorrclicado" />
 
     <Button
-        android:id="@+id/buttonEdit"
+        android:id="@+id/buttonEditOcorr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="268dp"
         android:background="@drawable/custom_button"
         android:text="@string/Editar"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonDelete"
+        android:id="@+id/buttonDeleteOcurr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="268dp"
         android:background="@drawable/custom_button"
         android:text="@string/Eliminar"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

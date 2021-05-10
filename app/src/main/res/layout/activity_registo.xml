@@ -5,72 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F2E29"
-    tools:context=".atividadeNotaClicada">
+    android:orientation="vertical"
+    tools:context=".registo">
 
     <EditText
-        android:id="@+id/tituloNotaClicado"
-        android:layout_width="234dp"
+        android:id="@+id/insereUsername"
+        android:layout_width="276dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="176dp"
         android:autofillHints=""
+        android:backgroundTint="#23CD9E11"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/tituloNota"
+        android:hint="@string/username"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#FBFBFB"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="242dp" />
 
     <EditText
-        android:id="@+id/corpoNotaClicado"
-        android:layout_width="245dp"
-        android:layout_height="83dp"
+        android:id="@+id/inserePass"
+        android:layout_width="296dp"
+        android:layout_height="54dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="128dp"
         android:autofillHints=""
+        android:backgroundTint="#A8A829"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/nota"
+        android:hint="@string/inserePass"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloNotaClicado" />
+        app:layout_constraintTop_toBottomOf="@+id/insereUsername" />
 
     <Button
-        android:id="@+id/buttonEdit"
+        android:id="@+id/buttonCriarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/custom_button"
-        android:text="@string/Editar"
+        android:text="@string/criarUser"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/inserePass" />
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/Eliminar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.829"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+

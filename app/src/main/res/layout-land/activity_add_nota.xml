@@ -5,72 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F2E29"
-    tools:context=".atividadeNotaClicada">
+    android:orientation="vertical"
+    tools:context=".AddNota">
 
     <EditText
-        android:id="@+id/tituloNotaClicado"
+        android:id="@+id/edit_word"
         android:layout_width="234dp"
         android:layout_height="54dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="176dp"
         android:autofillHints=""
+        android:backgroundTint="#23CD9E11"
         android:fontFamily="sans-serif-light"
         android:hint="@string/tituloNota"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#FBFBFB"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/corpoNotaClicado"
-        android:layout_width="245dp"
-        android:layout_height="83dp"
+        android:id="@+id/edit_word2"
+        android:layout_width="233dp"
+        android:layout_height="137dp"
         android:layout_margin="100dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="36dp"
         android:autofillHints=""
+        android:backgroundTint="#A8A829"
         android:fontFamily="sans-serif-light"
         android:hint="@string/nota"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloNotaClicado" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_word" />
 
     <Button
-        android:id="@+id/buttonEdit"
+        android:id="@+id/buttonsave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
         android:background="@drawable/custom_button"
-        android:text="@string/Editar"
+        android:text="@string/button_save"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="556dp" />
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/Eliminar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.829"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E80303"
+    android:background="#0F2E29"
     android:orientation="vertical"
     tools:context=".AddNota">
 
@@ -19,6 +19,8 @@
         android:hint="@string/tituloNota"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FBFBFB"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +40,8 @@
         android:hint="@string/nota"
         android:inputType="textAutoComplete"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.573"
@@ -59,4 +63,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

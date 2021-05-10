@@ -26,7 +26,7 @@ class atividadeNotaClicada : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_atividade_nota_clicada)
-        buttonApagar = findViewById(R.id.buttonDelete);
+        buttonApagar = this.findViewById(R.id.buttonDelete);
         buttonEditar = findViewById(R.id.buttonEdit);
         tituloNotaClicados  = findViewById(R.id.tituloNotaClicado)
         corpoNotaClicados  = findViewById(R.id.corpoNotaClicado)

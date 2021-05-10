@@ -6,35 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F2E29"
-    tools:context=".NotasActiviy">
+    tools:context=".AtividadeFiltrar">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/recyclerviewitem"
+
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-
-        android:id="@+id/fab"
+    <Button
+        android:id="@+id/VoltarMapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="496dp"
+        android:layout_marginTop="592dp"
         android:background="@drawable/custom_button"
-        android:contentDescription="@string/adicinar_nota"
-        android:src="@drawable/ic_add_black_24dp"
+        android:text="@string/Mapa"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
