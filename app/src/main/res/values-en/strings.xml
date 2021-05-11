@@ -38,4 +38,7 @@
     <string name="crieUma">Don´t have any account yet? Create one!</string>
     <string name="title_activity_mapa_ocorrencias" translatable="false">Map</string>
     <string name="filtrarPorTipo">Filter type</string>
+    <string name="apagarmarcadores">Filter Works</string>
+    <string name="FiltrarAci">Filter Accidents</string>
+    <string name="Mostrartudo">Show All</string>
 </resources>

@@ -3,4 +3,7 @@
     <item name="nameUser" type="id" />
     <item name="email" type="id" />
     <item name="city" type="id" />
+    <item name="button2" type="id" />
+    <item name="BotaoApagar" type="id" />
+
 </resources>
