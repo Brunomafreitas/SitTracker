@@ -63,6 +63,8 @@
     <string name="tipoAcidente">Tipo de Acidente</string>
     <string name="crieUma">Ainda não tem uma conta? Crie uma!</string>
     <string name="Mapa" translatable="false">Mapa</string>
-    <string name="apagarmarcadores">ApagarMarcadores</string>
-
+    <string name="apagarmarcadores">Filtrar Obras</string>
+    <string name="FiltrarAci">Filtrar Acidentes</string>
+    <string name="Mostrartudo">Mostrar tudo</string>
+    Mostrartudo
 </resources>

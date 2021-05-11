@@ -3,6 +3,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#0F2E29"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -26,17 +27,35 @@
 
     <Button
         android:id="@+id/BotaoApagar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/apagarmarcadores" />
-
-    <Button
-        android:id="@+id/buttonYo"
-        android:layout_width="wrap_content"
+        android:layout_width="143dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/map"
-        android:layout_marginBottom="48dp"
-        android:text="Button" />
+        android:layout_marginBottom="-71dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/apagarmarcadores"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/buttonAcidentes"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="-68dp"
+        android:layout_toEndOf="@+id/BotaoApagar"
+        android:background="@drawable/custom_button"
+        android:text="@string/FiltrarAci"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map"
+        android:layout_marginBottom="-152dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/Mostrartudo"
+        android:textColor="#FFFFFF" />
 
 
 </RelativeLayout>
