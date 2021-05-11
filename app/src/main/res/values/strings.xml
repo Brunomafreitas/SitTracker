@@ -66,5 +66,6 @@
     <string name="apagarmarcadores">Filtrar Obras</string>
     <string name="FiltrarAci">Filtrar Acidentes</string>
     <string name="Mostrartudo">Mostrar tudo</string>
-    Mostrartudo
+    <string name="MostrarMarcadoresProximos">Mostrar Próximos</string>
+
 </resources>

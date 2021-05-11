@@ -30,7 +30,7 @@
         android:layout_width="143dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/map"
-        android:layout_marginBottom="-71dp"
+        android:layout_marginBottom="-53dp"
         android:background="@drawable/custom_button"
         android:text="@string/apagarmarcadores"
         android:textColor="#FFFFFF" />
@@ -40,8 +40,8 @@
         android:layout_width="163dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/map"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="-68dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginBottom="-50dp"
         android:layout_toEndOf="@+id/BotaoApagar"
         android:background="@drawable/custom_button"
         android:text="@string/FiltrarAci"
@@ -52,9 +52,21 @@
         android:layout_width="131dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/map"
-        android:layout_marginBottom="-152dp"
+        android:layout_marginBottom="-108dp"
         android:background="@drawable/custom_button"
         android:text="@string/Mostrartudo"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/buttonFiltrar1km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonAcidentes"
+        android:layout_alignBottom="@+id/map"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="-110dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/MostrarMarcadoresProximos"
         android:textColor="#FFFFFF" />
 
 
