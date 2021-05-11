@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -36,7 +37,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
    private lateinit var locationRequest: LocationRequest
    private lateinit var locationCallback : LocationCallback
-
+    private  var markers: List<Marker> = emptyList()
+    private lateinit var marker: Marker;
 
     private lateinit var users: List<User>
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -48,10 +50,13 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
     private  var id : String? = " "
     private  var tipo_id : Int? = 0;
     private var utilizadorAtual : String = " ";
+    private lateinit var buttonApaga : Button
+    private lateinit var buttonAddMarkerPeloFiltro : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mapa_ocorrencias)
-
+        buttonApaga = findViewById<Button>(R.id.BotaoApagar);
+        buttonAddMarkerPeloFiltro = findViewById<Button>(R.id.buttonYo)
         continenteLat = 41.7843
         continenteLong = -8.8148
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -74,6 +79,266 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
             }
         }
+
+        buttonApaga.setOnClickListener{
+            mMap.clear();
+            val request = ServiceBuilder.buildService(endPoints::class.java)
+            val call = request.getOcorrencias()
+            var position: LatLng
+
+            call.enqueue(object : Callback<List<User>> {
+                override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+                    if (response.isSuccessful) {
+                        users = response.body()!!
+
+                        utilizadorAtual = id.toString();
+                        for (user in users) {
+                            if(user.tipo == "obras") {
+                                if (user.users_id == id) {
+
+
+                                    if (tipo_id == 0) {
+                                        //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
+                                        if (user.id.toInt() == id?.toInt()) {
+                                            position = LatLng(
+                                                user.lat.toString().toDouble(),
+                                                user.lng.toString().toDouble()
+                                            )
+
+                                            if (calculateDistance(
+                                                    position.latitude,
+                                                    position.longitude,
+                                                    lastLocation.latitude,
+                                                    lastLocation.longitude
+                                                ) < 1000000
+                                            ) {
+                                                marker = mMap.addMarker(
+                                                    MarkerOptions().position(position).title(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                            lastLocation.latitude,
+                                                            lastLocation.longitude,
+                                                            position.latitude,
+                                                            position.longitude
+                                                        )
+                                                    )
+                                                )
+                                                markers.toMutableList().add(marker);
+                                            }
+
+                                        } else {
+                                            position = LatLng(
+                                                user.lat.toString().toDouble(),
+                                                user.lng.toString().toDouble()
+                                            )
+                                            if (calculateDistance(
+                                                    position.latitude,
+                                                    position.longitude,
+                                                    lastLocation.latitude,
+                                                    lastLocation.longitude
+                                                ) < 1000000
+                                            ) {
+                                                marker = mMap.addMarker(
+                                                    MarkerOptions().position(position).title(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                            lastLocation.latitude,
+                                                            lastLocation.longitude,
+                                                            position.latitude,
+                                                            position.longitude
+                                                        )
+                                                    ).icon(
+                                                        BitmapDescriptorFactory.defaultMarker(
+                                                            BitmapDescriptorFactory.HUE_GREEN
+                                                        )
+                                                    )
+                                                )
+                                                markers.toMutableList().add(marker);
+                                            }
+                                        }
+                                    } else {
+                                        if (user.id.toInt() == tipo_id) {
+                                            if (user.id.toInt() == id?.toInt()) {
+                                                position = LatLng(
+                                                    user.lat.toString().toDouble(),
+                                                    user.lng.toString().toDouble()
+                                                )
+                                                if (calculateDistance(
+                                                        position.latitude,
+                                                        position.longitude,
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude
+                                                    ) < 1000000
+                                                ) {
+                                                    marker = mMap.addMarker(
+                                                        MarkerOptions().position(position).title(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                                lastLocation.latitude,
+                                                                lastLocation.longitude,
+                                                                position.latitude,
+                                                                position.longitude
+                                                            )
+                                                        )
+                                                    )
+                                                    markers.toMutableList().add(marker);
+                                                }
+                                            } else {
+                                                position = LatLng(
+                                                    user.lat.toString().toDouble(),
+                                                    user.lng.toString().toDouble()
+                                                )
+                                                if (calculateDistance(
+                                                        position.latitude,
+                                                        position.longitude,
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude
+                                                    ) < 1000000
+                                                ) {
+                                                    marker = mMap.addMarker(
+                                                        MarkerOptions().position(position).title(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                                lastLocation.latitude,
+                                                                lastLocation.longitude,
+                                                                position.latitude,
+                                                                position.longitude
+                                                            )
+                                                        ).icon(
+                                                            BitmapDescriptorFactory.defaultMarker(
+                                                                BitmapDescriptorFactory.HUE_GREEN
+                                                            )
+                                                        )
+                                                    )
+                                                    markers.toMutableList().add(marker);
+                                                }
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (tipo_id == 0) {
+                                        //Toast.makeText(this@MapsActivity, user.lat, Toast.LENGTH_SHORT).show()
+                                        if (user.id.toInt() == id?.toInt()) {
+                                            position = LatLng(
+                                                user.lat.toString().toDouble(),
+                                                user.lng.toString().toDouble()
+                                            )
+                                            if (calculateDistance(
+                                                    position.latitude,
+                                                    position.longitude,
+                                                    lastLocation.latitude,
+                                                    lastLocation.longitude
+                                                ) < 1000000
+                                            ) {
+                                                marker = mMap.addMarker(
+                                                    MarkerOptions().position(position).title(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                            lastLocation.latitude,
+                                                            lastLocation.longitude,
+                                                            position.latitude,
+                                                            position.longitude
+                                                        )
+                                                    )
+                                                )
+                                                markers.toMutableList().add(marker);
+                                            }
+                                        } else {
+                                            position = LatLng(
+                                                user.lat.toString().toDouble(),
+                                                user.lng.toString().toDouble()
+                                            )
+                                            if (calculateDistance(
+                                                    position.latitude,
+                                                    position.longitude,
+                                                    lastLocation.latitude,
+                                                    lastLocation.longitude
+                                                ) < 1000000
+                                            ) {
+                                                marker = mMap.addMarker(
+                                                    MarkerOptions().position(position).title(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                            lastLocation.latitude,
+                                                            lastLocation.longitude,
+                                                            position.latitude,
+                                                            position.longitude
+                                                        )
+                                                    ).icon(
+                                                        BitmapDescriptorFactory.defaultMarker(
+                                                            BitmapDescriptorFactory.HUE_BLUE
+                                                        )
+                                                    )
+                                                )
+                                                markers.toMutableList().add(marker);
+                                            }
+                                        }
+                                    } else {
+                                        if (user.id.toInt() == tipo_id) {
+                                            if (user.id.toInt() == id?.toInt()) {
+                                                position = LatLng(
+                                                    user.lat.toString().toDouble(),
+                                                    user.lng.toString().toDouble()
+                                                )
+                                                if (calculateDistance(
+                                                        position.latitude,
+                                                        position.longitude,
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude
+                                                    ) < 1000000
+                                                ) {
+                                                    marker = mMap.addMarker(
+                                                        MarkerOptions().position(position).title(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                                lastLocation.latitude,
+                                                                lastLocation.longitude,
+                                                                position.latitude,
+                                                                position.longitude
+                                                            )
+                                                        )
+                                                    )
+                                                    markers.toMutableList().add(marker);
+                                                }
+                                            } else {
+                                                position = LatLng(
+                                                    user.lat.toString().toDouble(),
+                                                    user.lng.toString().toDouble()
+                                                )
+                                                if (calculateDistance(
+                                                        position.latitude,
+                                                        position.longitude,
+                                                        lastLocation.latitude,
+                                                        lastLocation.longitude
+                                                    ) < 1000000
+                                                ) {
+                                                    marker = mMap.addMarker(
+                                                        MarkerOptions().position(position).title(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
+                                                                lastLocation.latitude,
+                                                                lastLocation.longitude,
+                                                                position.latitude,
+                                                                position.longitude
+                                                            )
+                                                        ).icon(
+                                                            BitmapDescriptorFactory.defaultMarker(
+                                                                BitmapDescriptorFactory.HUE_BLUE
+                                                            )
+                                                        )
+                                                    )
+                                                    markers.toMutableList().add(marker);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                override fun onFailure(call: Call<List<User>>, t: Throwable) {
+                    Toast.makeText(this@mapaOcorrencias, "${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+        buttonAddMarkerPeloFiltro.setOnClickListener{
+
+        }
+
+
         val extras = intent.extras
          id = extras?.getString("id")
         tipo_id = extras?.getInt("tipo_id")
@@ -219,7 +484,6 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
         startLocationUpdates()
 
 
-
         // call the service and add markers
         val request = ServiceBuilder.buildService(endPoints::class.java)
         val call = request.getOcorrencias()
@@ -242,8 +506,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                        mMap.addMarker(
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                       marker =  mMap.addMarker(
                                             MarkerOptions().position(position).title(
                                                 user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
@@ -251,14 +515,15 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 )
                                             )
                                         )
+                                        markers.toMutableList().add(marker);
                                     }
                                 } else {
                                     position = LatLng(
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                        mMap.addMarker(
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                        marker = mMap.addMarker(
                                             MarkerOptions().position(position).title(
                                                 user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
@@ -270,6 +535,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 )
                                             )
                                         )
+                                        markers.toMutableList().add(marker);
                                     }
                                 }
                             } else {
@@ -279,8 +545,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                            mMap.addMarker(
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                          marker =  mMap.addMarker(
                                                 MarkerOptions().position(position).title(
                                                     user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                         lastLocation.latitude,
@@ -290,14 +556,15 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                     )
                                                 )
                                             )
+                                            markers.toMutableList().add(marker);
                                         }
                                     } else {
                                         position = LatLng(
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                            mMap.addMarker(
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                            marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
                                                     user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                         lastLocation.latitude,
@@ -311,6 +578,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                     )
                                                 )
                                             )
+                                            markers.toMutableList().add(marker);
                                         }
                                     }
                                 }
@@ -323,8 +591,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                        mMap.addMarker(
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                       marker = mMap.addMarker(
                                             MarkerOptions().position(position).title(
                                                 user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
@@ -332,14 +600,15 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 )
                                             )
                                         )
+                                        markers.toMutableList().add(marker);
                                     }
                                 } else {
                                     position = LatLng(
                                         user.lat.toString().toDouble(),
                                         user.lng.toString().toDouble()
                                     )
-                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                        mMap.addMarker(
+                                    if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                       marker =  mMap.addMarker(
                                             MarkerOptions().position(position).title(
                                                 user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
@@ -351,6 +620,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 )
                                             )
                                         )
+                                        markers.toMutableList().add(marker);
                                     }
                                 }
                             } else {
@@ -360,8 +630,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                            mMap.addMarker(
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                           marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
                                                     user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                         lastLocation.latitude,
@@ -371,14 +641,15 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                     )
                                                 )
                                             )
+                                            markers.toMutableList().add(marker);
                                         }
                                     } else {
                                         position = LatLng(
                                             user.lat.toString().toDouble(),
                                             user.lng.toString().toDouble()
                                         )
-                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
-                                            mMap.addMarker(
+                                        if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
+                                            marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
                                                     user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + calculateDistance(
                                                         lastLocation.latitude,
@@ -392,6 +663,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                     )
                                                 )
                                             )
+                                            markers.toMutableList().add(marker);
                                         }
                                     }
                                 }
