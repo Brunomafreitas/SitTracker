@@ -981,9 +981,8 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                 }
             })
         }
-        val extras = intent.extras
-         id = extras?.getString("id")
-        tipo_id = extras?.getInt("tipo_id")
+
+
 
 
     }
@@ -1124,6 +1123,9 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
     {
         super.onResume()
         startLocationUpdates()
+        val extras = intent.extras
+        id = extras?.getString("id")
+        tipo_id = extras?.getInt("tipo_id")
 
 
         // call the service and add markers

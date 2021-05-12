@@ -27,26 +27,31 @@ var idUserAtual : String? = " ";
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ocorrencias)
 
+    }
+    public override fun onResume() {
+        super.onResume()
+
+        val extras = intent.extras
+        val id = extras?.getString("utilizadorId")
+        idUserAtual = id;
 
         buttonVoltarMapa = findViewById<Button>(R.id.VoltarMapa);
         buttonVoltarMapa.setOnClickListener {
             val intent = Intent(this@AtividadeFiltrar, mapaOcorrencias::class.java)
-
+            intent.putExtra("id", idUserAtual);
             startActivity(intent)
         }
         val request = ServiceBuilder.buildService(endPoints::class.java)
         val call = request.getOcorrencias()
 
-        val extras = intent.extras
-        val id = extras?.getString("utilizadorId")
-        idUserAtual = id;
+
         call.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 if (response.isSuccessful) {
 
-                        adapter = UserAdapter(response.body()!!,this@AtividadeFiltrar, this@AtividadeFiltrar);
-                        recyclerview.adapter = adapter;
-                        recyclerview.layoutManager = LinearLayoutManager(this@AtividadeFiltrar);
+                    adapter = UserAdapter(response.body()!!,this@AtividadeFiltrar, this@AtividadeFiltrar);
+                    recyclerview.adapter = adapter;
+                    recyclerview.layoutManager = LinearLayoutManager(this@AtividadeFiltrar);
 
                 }
             }
@@ -55,14 +60,13 @@ var idUserAtual : String? = " ";
             }
         })
     }
-
     override fun onItemClick(position: Int) {
 
         if(idUserAtual == adapter.getIndiceOcorrencia(position).users_id) {
             Toast.makeText(this, "Item $position clicado", Toast.LENGTH_SHORT).show();
 
             val intent = Intent(this, ocorrenciaclicada::class.java);
-            intent.putExtra("tituloNotaOcorr", adapter.getIndiceOcorrencia(position).nome);
+            intent.putExtra("tituloNotaOcorr", adapter.getIndiceOcorrencia(position).titulo);
             intent.putExtra("corpoNotaOcorr", adapter.getIndiceOcorrencia(position).corpo);
             intent.putExtra("idOcorr", adapter.getIndiceOcorrencia(position).id);
             intent.putExtra("idUtilizador", adapter.getIndiceOcorrencia(position).users_id);

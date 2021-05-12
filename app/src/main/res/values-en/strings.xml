@@ -41,4 +41,5 @@
     <string name="apagarmarcadores">Filter Works</string>
     <string name="FiltrarAci">Filter Accidents</string>
     <string name="Mostrartudo">Show All</string>
+    <string name="MostrarMarcadoresProximos" >Show closest´s</string>
 </resources>
