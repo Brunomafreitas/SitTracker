@@ -119,7 +119,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -144,7 +144,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -175,7 +175,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -199,7 +199,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -233,7 +233,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "  + "Tipo " + user.tipo + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "  + "Tipo " + user.tipo + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -257,7 +257,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -288,7 +288,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -312,7 +312,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -373,7 +373,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -398,7 +398,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -429,7 +429,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -453,7 +453,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -487,7 +487,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "  + "Tipo " + user.tipo + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "  + "Tipo " + user.tipo + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -511,7 +511,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             ) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -542,7 +542,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -566,7 +566,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                                 ) {
                                                     marker = mMap.addMarker(
                                                         MarkerOptions().position(position).title(
-                                                            user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                            user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                                 lastLocation.latitude,
                                                                 lastLocation.longitude,
                                                                 position.latitude,
@@ -619,7 +619,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                             marker =  mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -635,7 +635,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                             marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -658,7 +658,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                                 marker =  mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -676,7 +676,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -704,7 +704,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                             marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -720,7 +720,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                             marker =  mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -743,7 +743,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -761,7 +761,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000000) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -813,7 +813,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                             marker =  mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -829,7 +829,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                             marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -852,7 +852,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                                 marker =  mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -870,7 +870,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -898,7 +898,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                             marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -914,7 +914,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                         if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                             marker =  mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo + calculateDistance(
                                                         lastLocation.latitude, lastLocation.longitude,
                                                         position.latitude, position.longitude
                                                     )
@@ -937,7 +937,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -955,7 +955,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
                                             if(calculateDistance(position.latitude, position.longitude, lastLocation.latitude, lastLocation.longitude) < 1000) {
                                                 marker = mMap.addMarker(
                                                     MarkerOptions().position(position).title(
-                                                        user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                        user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                             lastLocation.latitude,
                                                             lastLocation.longitude,
                                                             position.latitude,
@@ -1153,7 +1153,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                        marker =  mMap.addMarker(
                                             MarkerOptions().position(position).title(
-                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo + calculateDistance(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
                                                     position.latitude, position.longitude
                                                 )
@@ -1169,7 +1169,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                         marker = mMap.addMarker(
                                             MarkerOptions().position(position).title(
-                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
                                                     position.latitude, position.longitude
                                                 )
@@ -1192,7 +1192,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                           marker =  mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude,
                                                         lastLocation.longitude,
                                                         position.latitude,
@@ -1210,7 +1210,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                             marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude,
                                                         lastLocation.longitude,
                                                         position.latitude,
@@ -1238,7 +1238,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                        marker = mMap.addMarker(
                                             MarkerOptions().position(position).title(
-                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo + calculateDistance(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
                                                     position.latitude, position.longitude
                                                 )
@@ -1254,7 +1254,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                        marker =  mMap.addMarker(
                                             MarkerOptions().position(position).title(
-                                                user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia " + "Tipo " + user.tipo + calculateDistance(
+                                                user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia " + "Tipo " + user.tipo + calculateDistance(
                                                     lastLocation.latitude, lastLocation.longitude,
                                                     position.latitude, position.longitude
                                                 )
@@ -1277,7 +1277,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                            marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude,
                                                         lastLocation.longitude,
                                                         position.latitude,
@@ -1295,7 +1295,7 @@ class mapaOcorrencias : AppCompatActivity(), OnMapReadyCallback {
 
                                             marker = mMap.addMarker(
                                                 MarkerOptions().position(position).title(
-                                                    user.nome + " - " + user.titulo + " - " + user.corpo + "Distancia "+ "Tipo " + user.tipo  + calculateDistance(
+                                                    user.nome + " - " + user.titulo + " - " + user.corpo + " Distancia "+ "Tipo " + user.tipo  + calculateDistance(
                                                         lastLocation.latitude,
                                                         lastLocation.longitude,
                                                         position.latitude,
